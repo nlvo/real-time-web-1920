@@ -1,0 +1,29 @@
+<%- include ("partials/head.ejs") %>
+
+<h1>Say Hi 👋</h1>
+<section>
+	<ul></ul>
+</section>
+
+<form id="user-form" class="user">
+	<fieldset>
+		<legend>Register</legend>
+		<label for="">
+			Choose a username
+			<input type="text" id="username">
+		</label>
+		<button form="user-form">Send</button>
+	</fieldset>
+</form>
+
+<form id="message-form">
+	<fieldset>
+		<legend>Chat</legend>
+		<label for="">
+			Write a message
+			<input type="text" id="message">
+		</label>
+		<button form="message-form">Send</button>
+	</fieldset>
+</form>
+<%- include ("partials/footer.ejs") %>

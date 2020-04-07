@@ -1,0 +1,2158 @@
+[
+    {
+        "slug": "chequered-flag",
+        "character": "🏁",
+        "unicodeName": "chequered flag",
+        "codePoint": "1F3C1",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "triangular-flag",
+        "character": "🚩",
+        "unicodeName": "triangular flag",
+        "codePoint": "1F6A9",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "crossed-flags",
+        "character": "🎌",
+        "unicodeName": "crossed flags",
+        "codePoint": "1F38C",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "black-flag",
+        "character": "🏴",
+        "unicodeName": "black flag",
+        "codePoint": "1F3F4",
+        "group": "flags",
+        "subGroup": "flag",
+        "variants": [
+            {
+                "slug": "flag-scotland",
+                "character": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+            },
+            {
+                "slug": "flag-wales",
+                "character": "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+            }
+        ]
+    },
+    {
+        "slug": "white-flag",
+        "character": "🏳️",
+        "unicodeName": "white flag",
+        "codePoint": "1F3F3 FE0F",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "rainbow-flag",
+        "character": "🏳️‍🌈",
+        "unicodeName": "rainbow flag",
+        "codePoint": "1F3F3 FE0F 200D 1F308",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "pirate-flag",
+        "character": "🏴‍☠️",
+        "unicodeName": "pirate flag",
+        "codePoint": "1F3F4 200D 2620 FE0F",
+        "group": "flags",
+        "subGroup": "flag"
+    },
+    {
+        "slug": "flag-ascension-island",
+        "character": "🇦🇨",
+        "unicodeName": "flag: Ascension Island",
+        "codePoint": "1F1E6 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-andorra",
+        "character": "🇦🇩",
+        "unicodeName": "flag: Andorra",
+        "codePoint": "1F1E6 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-united-arab-emirates",
+        "character": "🇦🇪",
+        "unicodeName": "flag: United Arab Emirates",
+        "codePoint": "1F1E6 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-afghanistan",
+        "character": "🇦🇫",
+        "unicodeName": "flag: Afghanistan",
+        "codePoint": "1F1E6 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-antigua-barbuda",
+        "character": "🇦🇬",
+        "unicodeName": "flag: Antigua & Barbuda",
+        "codePoint": "1F1E6 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-anguilla",
+        "character": "🇦🇮",
+        "unicodeName": "flag: Anguilla",
+        "codePoint": "1F1E6 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-albania",
+        "character": "🇦🇱",
+        "unicodeName": "flag: Albania",
+        "codePoint": "1F1E6 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-armenia",
+        "character": "🇦🇲",
+        "unicodeName": "flag: Armenia",
+        "codePoint": "1F1E6 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-angola",
+        "character": "🇦🇴",
+        "unicodeName": "flag: Angola",
+        "codePoint": "1F1E6 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-antarctica",
+        "character": "🇦🇶",
+        "unicodeName": "flag: Antarctica",
+        "codePoint": "1F1E6 1F1F6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-argentina",
+        "character": "🇦🇷",
+        "unicodeName": "flag: Argentina",
+        "codePoint": "1F1E6 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-american-samoa",
+        "character": "🇦🇸",
+        "unicodeName": "flag: American Samoa",
+        "codePoint": "1F1E6 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-austria",
+        "character": "🇦🇹",
+        "unicodeName": "flag: Austria",
+        "codePoint": "1F1E6 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-australia",
+        "character": "🇦🇺",
+        "unicodeName": "flag: Australia",
+        "codePoint": "1F1E6 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-aruba",
+        "character": "🇦🇼",
+        "unicodeName": "flag: Aruba",
+        "codePoint": "1F1E6 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-aland-islands",
+        "character": "🇦🇽",
+        "unicodeName": "flag: Åland Islands",
+        "codePoint": "1F1E6 1F1FD",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-azerbaijan",
+        "character": "🇦🇿",
+        "unicodeName": "flag: Azerbaijan",
+        "codePoint": "1F1E6 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bosnia-herzegovina",
+        "character": "🇧🇦",
+        "unicodeName": "flag: Bosnia & Herzegovina",
+        "codePoint": "1F1E7 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-barbados",
+        "character": "🇧🇧",
+        "unicodeName": "flag: Barbados",
+        "codePoint": "1F1E7 1F1E7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bangladesh",
+        "character": "🇧🇩",
+        "unicodeName": "flag: Bangladesh",
+        "codePoint": "1F1E7 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-belgium",
+        "character": "🇧🇪",
+        "unicodeName": "flag: Belgium",
+        "codePoint": "1F1E7 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-burkina-faso",
+        "character": "🇧🇫",
+        "unicodeName": "flag: Burkina Faso",
+        "codePoint": "1F1E7 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bulgaria",
+        "character": "🇧🇬",
+        "unicodeName": "flag: Bulgaria",
+        "codePoint": "1F1E7 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bahrain",
+        "character": "🇧🇭",
+        "unicodeName": "flag: Bahrain",
+        "codePoint": "1F1E7 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-burundi",
+        "character": "🇧🇮",
+        "unicodeName": "flag: Burundi",
+        "codePoint": "1F1E7 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-benin",
+        "character": "🇧🇯",
+        "unicodeName": "flag: Benin",
+        "codePoint": "1F1E7 1F1EF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-barthelemy",
+        "character": "🇧🇱",
+        "unicodeName": "flag: St. Barthélemy",
+        "codePoint": "1F1E7 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bermuda",
+        "character": "🇧🇲",
+        "unicodeName": "flag: Bermuda",
+        "codePoint": "1F1E7 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-brunei",
+        "character": "🇧🇳",
+        "unicodeName": "flag: Brunei",
+        "codePoint": "1F1E7 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bolivia",
+        "character": "🇧🇴",
+        "unicodeName": "flag: Bolivia",
+        "codePoint": "1F1E7 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-caribbean-netherlands",
+        "character": "🇧🇶",
+        "unicodeName": "flag: Caribbean Netherlands",
+        "codePoint": "1F1E7 1F1F6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-brazil",
+        "character": "🇧🇷",
+        "unicodeName": "flag: Brazil",
+        "codePoint": "1F1E7 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bahamas",
+        "character": "🇧🇸",
+        "unicodeName": "flag: Bahamas",
+        "codePoint": "1F1E7 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bhutan",
+        "character": "🇧🇹",
+        "unicodeName": "flag: Bhutan",
+        "codePoint": "1F1E7 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-bouvet-island",
+        "character": "🇧🇻",
+        "unicodeName": "flag: Bouvet Island",
+        "codePoint": "1F1E7 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-botswana",
+        "character": "🇧🇼",
+        "unicodeName": "flag: Botswana",
+        "codePoint": "1F1E7 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-belarus",
+        "character": "🇧🇾",
+        "unicodeName": "flag: Belarus",
+        "codePoint": "1F1E7 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-belize",
+        "character": "🇧🇿",
+        "unicodeName": "flag: Belize",
+        "codePoint": "1F1E7 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-canada",
+        "character": "🇨🇦",
+        "unicodeName": "flag: Canada",
+        "codePoint": "1F1E8 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cocos-keeling-islands",
+        "character": "🇨🇨",
+        "unicodeName": "flag: Cocos (Keeling) Islands",
+        "codePoint": "1F1E8 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-congo-kinshasa",
+        "character": "🇨🇩",
+        "unicodeName": "flag: Congo - Kinshasa",
+        "codePoint": "1F1E8 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-central-african-republic",
+        "character": "🇨🇫",
+        "unicodeName": "flag: Central African Republic",
+        "codePoint": "1F1E8 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-congo-brazzaville",
+        "character": "🇨🇬",
+        "unicodeName": "flag: Congo - Brazzaville",
+        "codePoint": "1F1E8 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-switzerland",
+        "character": "🇨🇭",
+        "unicodeName": "flag: Switzerland",
+        "codePoint": "1F1E8 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cote-d-ivoire",
+        "character": "🇨🇮",
+        "unicodeName": "flag: Côte d’Ivoire",
+        "codePoint": "1F1E8 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cook-islands",
+        "character": "🇨🇰",
+        "unicodeName": "flag: Cook Islands",
+        "codePoint": "1F1E8 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-chile",
+        "character": "🇨🇱",
+        "unicodeName": "flag: Chile",
+        "codePoint": "1F1E8 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cameroon",
+        "character": "🇨🇲",
+        "unicodeName": "flag: Cameroon",
+        "codePoint": "1F1E8 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-china",
+        "character": "🇨🇳",
+        "unicodeName": "flag: China",
+        "codePoint": "1F1E8 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-colombia",
+        "character": "🇨🇴",
+        "unicodeName": "flag: Colombia",
+        "codePoint": "1F1E8 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-clipperton-island",
+        "character": "🇨🇵",
+        "unicodeName": "flag: Clipperton Island",
+        "codePoint": "1F1E8 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-costa-rica",
+        "character": "🇨🇷",
+        "unicodeName": "flag: Costa Rica",
+        "codePoint": "1F1E8 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cuba",
+        "character": "🇨🇺",
+        "unicodeName": "flag: Cuba",
+        "codePoint": "1F1E8 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cape-verde",
+        "character": "🇨🇻",
+        "unicodeName": "flag: Cape Verde",
+        "codePoint": "1F1E8 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-curacao",
+        "character": "🇨🇼",
+        "unicodeName": "flag: Curaçao",
+        "codePoint": "1F1E8 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-christmas-island",
+        "character": "🇨🇽",
+        "unicodeName": "flag: Christmas Island",
+        "codePoint": "1F1E8 1F1FD",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cyprus",
+        "character": "🇨🇾",
+        "unicodeName": "flag: Cyprus",
+        "codePoint": "1F1E8 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-czechia",
+        "character": "🇨🇿",
+        "unicodeName": "flag: Czechia",
+        "codePoint": "1F1E8 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-germany",
+        "character": "🇩🇪",
+        "unicodeName": "flag: Germany",
+        "codePoint": "1F1E9 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-diego-garcia",
+        "character": "🇩🇬",
+        "unicodeName": "flag: Diego Garcia",
+        "codePoint": "1F1E9 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-djibouti",
+        "character": "🇩🇯",
+        "unicodeName": "flag: Djibouti",
+        "codePoint": "1F1E9 1F1EF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-denmark",
+        "character": "🇩🇰",
+        "unicodeName": "flag: Denmark",
+        "codePoint": "1F1E9 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-dominica",
+        "character": "🇩🇲",
+        "unicodeName": "flag: Dominica",
+        "codePoint": "1F1E9 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-dominican-republic",
+        "character": "🇩🇴",
+        "unicodeName": "flag: Dominican Republic",
+        "codePoint": "1F1E9 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-algeria",
+        "character": "🇩🇿",
+        "unicodeName": "flag: Algeria",
+        "codePoint": "1F1E9 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ceuta-melilla",
+        "character": "🇪🇦",
+        "unicodeName": "flag: Ceuta & Melilla",
+        "codePoint": "1F1EA 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ecuador",
+        "character": "🇪🇨",
+        "unicodeName": "flag: Ecuador",
+        "codePoint": "1F1EA 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-estonia",
+        "character": "🇪🇪",
+        "unicodeName": "flag: Estonia",
+        "codePoint": "1F1EA 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-egypt",
+        "character": "🇪🇬",
+        "unicodeName": "flag: Egypt",
+        "codePoint": "1F1EA 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-western-sahara",
+        "character": "🇪🇭",
+        "unicodeName": "flag: Western Sahara",
+        "codePoint": "1F1EA 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-eritrea",
+        "character": "🇪🇷",
+        "unicodeName": "flag: Eritrea",
+        "codePoint": "1F1EA 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-spain",
+        "character": "🇪🇸",
+        "unicodeName": "flag: Spain",
+        "codePoint": "1F1EA 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ethiopia",
+        "character": "🇪🇹",
+        "unicodeName": "flag: Ethiopia",
+        "codePoint": "1F1EA 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-european-union",
+        "character": "🇪🇺",
+        "unicodeName": "flag: European Union",
+        "codePoint": "1F1EA 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-finland",
+        "character": "🇫🇮",
+        "unicodeName": "flag: Finland",
+        "codePoint": "1F1EB 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-fiji",
+        "character": "🇫🇯",
+        "unicodeName": "flag: Fiji",
+        "codePoint": "1F1EB 1F1EF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-falkland-islands",
+        "character": "🇫🇰",
+        "unicodeName": "flag: Falkland Islands",
+        "codePoint": "1F1EB 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-micronesia",
+        "character": "🇫🇲",
+        "unicodeName": "flag: Micronesia",
+        "codePoint": "1F1EB 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-faroe-islands",
+        "character": "🇫🇴",
+        "unicodeName": "flag: Faroe Islands",
+        "codePoint": "1F1EB 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-france",
+        "character": "🇫🇷",
+        "unicodeName": "flag: France",
+        "codePoint": "1F1EB 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-gabon",
+        "character": "🇬🇦",
+        "unicodeName": "flag: Gabon",
+        "codePoint": "1F1EC 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-united-kingdom",
+        "character": "🇬🇧",
+        "unicodeName": "flag: United Kingdom",
+        "codePoint": "1F1EC 1F1E7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-grenada",
+        "character": "🇬🇩",
+        "unicodeName": "flag: Grenada",
+        "codePoint": "1F1EC 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-georgia",
+        "character": "🇬🇪",
+        "unicodeName": "flag: Georgia",
+        "codePoint": "1F1EC 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-french-guiana",
+        "character": "🇬🇫",
+        "unicodeName": "flag: French Guiana",
+        "codePoint": "1F1EC 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guernsey",
+        "character": "🇬🇬",
+        "unicodeName": "flag: Guernsey",
+        "codePoint": "1F1EC 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ghana",
+        "character": "🇬🇭",
+        "unicodeName": "flag: Ghana",
+        "codePoint": "1F1EC 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-gibraltar",
+        "character": "🇬🇮",
+        "unicodeName": "flag: Gibraltar",
+        "codePoint": "1F1EC 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-greenland",
+        "character": "🇬🇱",
+        "unicodeName": "flag: Greenland",
+        "codePoint": "1F1EC 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-gambia",
+        "character": "🇬🇲",
+        "unicodeName": "flag: Gambia",
+        "codePoint": "1F1EC 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guinea",
+        "character": "🇬🇳",
+        "unicodeName": "flag: Guinea",
+        "codePoint": "1F1EC 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guadeloupe",
+        "character": "🇬🇵",
+        "unicodeName": "flag: Guadeloupe",
+        "codePoint": "1F1EC 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-equatorial-guinea",
+        "character": "🇬🇶",
+        "unicodeName": "flag: Equatorial Guinea",
+        "codePoint": "1F1EC 1F1F6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-greece",
+        "character": "🇬🇷",
+        "unicodeName": "flag: Greece",
+        "codePoint": "1F1EC 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-south-georgia-south-sandwich-islands",
+        "character": "🇬🇸",
+        "unicodeName": "flag: South Georgia & South Sandwich Islands",
+        "codePoint": "1F1EC 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guatemala",
+        "character": "🇬🇹",
+        "unicodeName": "flag: Guatemala",
+        "codePoint": "1F1EC 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guam",
+        "character": "🇬🇺",
+        "unicodeName": "flag: Guam",
+        "codePoint": "1F1EC 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guinea-bissau",
+        "character": "🇬🇼",
+        "unicodeName": "flag: Guinea-Bissau",
+        "codePoint": "1F1EC 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-guyana",
+        "character": "🇬🇾",
+        "unicodeName": "flag: Guyana",
+        "codePoint": "1F1EC 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-hong-kong-sar-china",
+        "character": "🇭🇰",
+        "unicodeName": "flag: Hong Kong SAR China",
+        "codePoint": "1F1ED 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-heard-mcdonald-islands",
+        "character": "🇭🇲",
+        "unicodeName": "flag: Heard & McDonald Islands",
+        "codePoint": "1F1ED 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-honduras",
+        "character": "🇭🇳",
+        "unicodeName": "flag: Honduras",
+        "codePoint": "1F1ED 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-croatia",
+        "character": "🇭🇷",
+        "unicodeName": "flag: Croatia",
+        "codePoint": "1F1ED 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-haiti",
+        "character": "🇭🇹",
+        "unicodeName": "flag: Haiti",
+        "codePoint": "1F1ED 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-hungary",
+        "character": "🇭🇺",
+        "unicodeName": "flag: Hungary",
+        "codePoint": "1F1ED 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-canary-islands",
+        "character": "🇮🇨",
+        "unicodeName": "flag: Canary Islands",
+        "codePoint": "1F1EE 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-indonesia",
+        "character": "🇮🇩",
+        "unicodeName": "flag: Indonesia",
+        "codePoint": "1F1EE 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ireland",
+        "character": "🇮🇪",
+        "unicodeName": "flag: Ireland",
+        "codePoint": "1F1EE 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-israel",
+        "character": "🇮🇱",
+        "unicodeName": "flag: Israel",
+        "codePoint": "1F1EE 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-isle-of-man",
+        "character": "🇮🇲",
+        "unicodeName": "flag: Isle of Man",
+        "codePoint": "1F1EE 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-india",
+        "character": "🇮🇳",
+        "unicodeName": "flag: India",
+        "codePoint": "1F1EE 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-british-indian-ocean-territory",
+        "character": "🇮🇴",
+        "unicodeName": "flag: British Indian Ocean Territory",
+        "codePoint": "1F1EE 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-iraq",
+        "character": "🇮🇶",
+        "unicodeName": "flag: Iraq",
+        "codePoint": "1F1EE 1F1F6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-iran",
+        "character": "🇮🇷",
+        "unicodeName": "flag: Iran",
+        "codePoint": "1F1EE 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-iceland",
+        "character": "🇮🇸",
+        "unicodeName": "flag: Iceland",
+        "codePoint": "1F1EE 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-italy",
+        "character": "🇮🇹",
+        "unicodeName": "flag: Italy",
+        "codePoint": "1F1EE 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-jersey",
+        "character": "🇯🇪",
+        "unicodeName": "flag: Jersey",
+        "codePoint": "1F1EF 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-jamaica",
+        "character": "🇯🇲",
+        "unicodeName": "flag: Jamaica",
+        "codePoint": "1F1EF 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-jordan",
+        "character": "🇯🇴",
+        "unicodeName": "flag: Jordan",
+        "codePoint": "1F1EF 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-japan",
+        "character": "🇯🇵",
+        "unicodeName": "flag: Japan",
+        "codePoint": "1F1EF 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kenya",
+        "character": "🇰🇪",
+        "unicodeName": "flag: Kenya",
+        "codePoint": "1F1F0 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kyrgyzstan",
+        "character": "🇰🇬",
+        "unicodeName": "flag: Kyrgyzstan",
+        "codePoint": "1F1F0 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cambodia",
+        "character": "🇰🇭",
+        "unicodeName": "flag: Cambodia",
+        "codePoint": "1F1F0 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kiribati",
+        "character": "🇰🇮",
+        "unicodeName": "flag: Kiribati",
+        "codePoint": "1F1F0 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-comoros",
+        "character": "🇰🇲",
+        "unicodeName": "flag: Comoros",
+        "codePoint": "1F1F0 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-kitts-nevis",
+        "character": "🇰🇳",
+        "unicodeName": "flag: St. Kitts & Nevis",
+        "codePoint": "1F1F0 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-north-korea",
+        "character": "🇰🇵",
+        "unicodeName": "flag: North Korea",
+        "codePoint": "1F1F0 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-south-korea",
+        "character": "🇰🇷",
+        "unicodeName": "flag: South Korea",
+        "codePoint": "1F1F0 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kuwait",
+        "character": "🇰🇼",
+        "unicodeName": "flag: Kuwait",
+        "codePoint": "1F1F0 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-cayman-islands",
+        "character": "🇰🇾",
+        "unicodeName": "flag: Cayman Islands",
+        "codePoint": "1F1F0 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kazakhstan",
+        "character": "🇰🇿",
+        "unicodeName": "flag: Kazakhstan",
+        "codePoint": "1F1F0 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-laos",
+        "character": "🇱🇦",
+        "unicodeName": "flag: Laos",
+        "codePoint": "1F1F1 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-lebanon",
+        "character": "🇱🇧",
+        "unicodeName": "flag: Lebanon",
+        "codePoint": "1F1F1 1F1E7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-lucia",
+        "character": "🇱🇨",
+        "unicodeName": "flag: St. Lucia",
+        "codePoint": "1F1F1 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-liechtenstein",
+        "character": "🇱🇮",
+        "unicodeName": "flag: Liechtenstein",
+        "codePoint": "1F1F1 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sri-lanka",
+        "character": "🇱🇰",
+        "unicodeName": "flag: Sri Lanka",
+        "codePoint": "1F1F1 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-liberia",
+        "character": "🇱🇷",
+        "unicodeName": "flag: Liberia",
+        "codePoint": "1F1F1 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-lesotho",
+        "character": "🇱🇸",
+        "unicodeName": "flag: Lesotho",
+        "codePoint": "1F1F1 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-lithuania",
+        "character": "🇱🇹",
+        "unicodeName": "flag: Lithuania",
+        "codePoint": "1F1F1 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-luxembourg",
+        "character": "🇱🇺",
+        "unicodeName": "flag: Luxembourg",
+        "codePoint": "1F1F1 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-latvia",
+        "character": "🇱🇻",
+        "unicodeName": "flag: Latvia",
+        "codePoint": "1F1F1 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-libya",
+        "character": "🇱🇾",
+        "unicodeName": "flag: Libya",
+        "codePoint": "1F1F1 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-morocco",
+        "character": "🇲🇦",
+        "unicodeName": "flag: Morocco",
+        "codePoint": "1F1F2 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-monaco",
+        "character": "🇲🇨",
+        "unicodeName": "flag: Monaco",
+        "codePoint": "1F1F2 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-moldova",
+        "character": "🇲🇩",
+        "unicodeName": "flag: Moldova",
+        "codePoint": "1F1F2 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-montenegro",
+        "character": "🇲🇪",
+        "unicodeName": "flag: Montenegro",
+        "codePoint": "1F1F2 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-martin",
+        "character": "🇲🇫",
+        "unicodeName": "flag: St. Martin",
+        "codePoint": "1F1F2 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-madagascar",
+        "character": "🇲🇬",
+        "unicodeName": "flag: Madagascar",
+        "codePoint": "1F1F2 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-marshall-islands",
+        "character": "🇲🇭",
+        "unicodeName": "flag: Marshall Islands",
+        "codePoint": "1F1F2 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-macedonia",
+        "character": "🇲🇰",
+        "unicodeName": "flag: Macedonia",
+        "codePoint": "1F1F2 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mali",
+        "character": "🇲🇱",
+        "unicodeName": "flag: Mali",
+        "codePoint": "1F1F2 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-myanmar-burma",
+        "character": "🇲🇲",
+        "unicodeName": "flag: Myanmar (Burma)",
+        "codePoint": "1F1F2 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mongolia",
+        "character": "🇲🇳",
+        "unicodeName": "flag: Mongolia",
+        "codePoint": "1F1F2 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-macao-sar-china",
+        "character": "🇲🇴",
+        "unicodeName": "flag: Macao SAR China",
+        "codePoint": "1F1F2 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-northern-mariana-islands",
+        "character": "🇲🇵",
+        "unicodeName": "flag: Northern Mariana Islands",
+        "codePoint": "1F1F2 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-martinique",
+        "character": "🇲🇶",
+        "unicodeName": "flag: Martinique",
+        "codePoint": "1F1F2 1F1F6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mauritania",
+        "character": "🇲🇷",
+        "unicodeName": "flag: Mauritania",
+        "codePoint": "1F1F2 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-montserrat",
+        "character": "🇲🇸",
+        "unicodeName": "flag: Montserrat",
+        "codePoint": "1F1F2 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-malta",
+        "character": "🇲🇹",
+        "unicodeName": "flag: Malta",
+        "codePoint": "1F1F2 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mauritius",
+        "character": "🇲🇺",
+        "unicodeName": "flag: Mauritius",
+        "codePoint": "1F1F2 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-maldives",
+        "character": "🇲🇻",
+        "unicodeName": "flag: Maldives",
+        "codePoint": "1F1F2 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-malawi",
+        "character": "🇲🇼",
+        "unicodeName": "flag: Malawi",
+        "codePoint": "1F1F2 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mexico",
+        "character": "🇲🇽",
+        "unicodeName": "flag: Mexico",
+        "codePoint": "1F1F2 1F1FD",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-malaysia",
+        "character": "🇲🇾",
+        "unicodeName": "flag: Malaysia",
+        "codePoint": "1F1F2 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mozambique",
+        "character": "🇲🇿",
+        "unicodeName": "flag: Mozambique",
+        "codePoint": "1F1F2 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-namibia",
+        "character": "🇳🇦",
+        "unicodeName": "flag: Namibia",
+        "codePoint": "1F1F3 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-new-caledonia",
+        "character": "🇳🇨",
+        "unicodeName": "flag: New Caledonia",
+        "codePoint": "1F1F3 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-niger",
+        "character": "🇳🇪",
+        "unicodeName": "flag: Niger",
+        "codePoint": "1F1F3 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-norfolk-island",
+        "character": "🇳🇫",
+        "unicodeName": "flag: Norfolk Island",
+        "codePoint": "1F1F3 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-nigeria",
+        "character": "🇳🇬",
+        "unicodeName": "flag: Nigeria",
+        "codePoint": "1F1F3 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-nicaragua",
+        "character": "🇳🇮",
+        "unicodeName": "flag: Nicaragua",
+        "codePoint": "1F1F3 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-netherlands",
+        "character": "🇳🇱",
+        "unicodeName": "flag: Netherlands",
+        "codePoint": "1F1F3 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-norway",
+        "character": "🇳🇴",
+        "unicodeName": "flag: Norway",
+        "codePoint": "1F1F3 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-nepal",
+        "character": "🇳🇵",
+        "unicodeName": "flag: Nepal",
+        "codePoint": "1F1F3 1F1F5",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-nauru",
+        "character": "🇳🇷",
+        "unicodeName": "flag: Nauru",
+        "codePoint": "1F1F3 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-niue",
+        "character": "🇳🇺",
+        "unicodeName": "flag: Niue",
+        "codePoint": "1F1F3 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-new-zealand",
+        "character": "🇳🇿",
+        "unicodeName": "flag: New Zealand",
+        "codePoint": "1F1F3 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-oman",
+        "character": "🇴🇲",
+        "unicodeName": "flag: Oman",
+        "codePoint": "1F1F4 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-panama",
+        "character": "🇵🇦",
+        "unicodeName": "flag: Panama",
+        "codePoint": "1F1F5 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-peru",
+        "character": "🇵🇪",
+        "unicodeName": "flag: Peru",
+        "codePoint": "1F1F5 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-french-polynesia",
+        "character": "🇵🇫",
+        "unicodeName": "flag: French Polynesia",
+        "codePoint": "1F1F5 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-papua-new-guinea",
+        "character": "🇵🇬",
+        "unicodeName": "flag: Papua New Guinea",
+        "codePoint": "1F1F5 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-philippines",
+        "character": "🇵🇭",
+        "unicodeName": "flag: Philippines",
+        "codePoint": "1F1F5 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-pakistan",
+        "character": "🇵🇰",
+        "unicodeName": "flag: Pakistan",
+        "codePoint": "1F1F5 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-poland",
+        "character": "🇵🇱",
+        "unicodeName": "flag: Poland",
+        "codePoint": "1F1F5 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-pierre-miquelon",
+        "character": "🇵🇲",
+        "unicodeName": "flag: St. Pierre & Miquelon",
+        "codePoint": "1F1F5 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-pitcairn-islands",
+        "character": "🇵🇳",
+        "unicodeName": "flag: Pitcairn Islands",
+        "codePoint": "1F1F5 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-puerto-rico",
+        "character": "🇵🇷",
+        "unicodeName": "flag: Puerto Rico",
+        "codePoint": "1F1F5 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-palestinian-territories",
+        "character": "🇵🇸",
+        "unicodeName": "flag: Palestinian Territories",
+        "codePoint": "1F1F5 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-portugal",
+        "character": "🇵🇹",
+        "unicodeName": "flag: Portugal",
+        "codePoint": "1F1F5 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-palau",
+        "character": "🇵🇼",
+        "unicodeName": "flag: Palau",
+        "codePoint": "1F1F5 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-paraguay",
+        "character": "🇵🇾",
+        "unicodeName": "flag: Paraguay",
+        "codePoint": "1F1F5 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-qatar",
+        "character": "🇶🇦",
+        "unicodeName": "flag: Qatar",
+        "codePoint": "1F1F6 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-reunion",
+        "character": "🇷🇪",
+        "unicodeName": "flag: Réunion",
+        "codePoint": "1F1F7 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-romania",
+        "character": "🇷🇴",
+        "unicodeName": "flag: Romania",
+        "codePoint": "1F1F7 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-serbia",
+        "character": "🇷🇸",
+        "unicodeName": "flag: Serbia",
+        "codePoint": "1F1F7 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-russia",
+        "character": "🇷🇺",
+        "unicodeName": "flag: Russia",
+        "codePoint": "1F1F7 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-rwanda",
+        "character": "🇷🇼",
+        "unicodeName": "flag: Rwanda",
+        "codePoint": "1F1F7 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-saudi-arabia",
+        "character": "🇸🇦",
+        "unicodeName": "flag: Saudi Arabia",
+        "codePoint": "1F1F8 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-solomon-islands",
+        "character": "🇸🇧",
+        "unicodeName": "flag: Solomon Islands",
+        "codePoint": "1F1F8 1F1E7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-seychelles",
+        "character": "🇸🇨",
+        "unicodeName": "flag: Seychelles",
+        "codePoint": "1F1F8 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sudan",
+        "character": "🇸🇩",
+        "unicodeName": "flag: Sudan",
+        "codePoint": "1F1F8 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sweden",
+        "character": "🇸🇪",
+        "unicodeName": "flag: Sweden",
+        "codePoint": "1F1F8 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-singapore",
+        "character": "🇸🇬",
+        "unicodeName": "flag: Singapore",
+        "codePoint": "1F1F8 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-helena",
+        "character": "🇸🇭",
+        "unicodeName": "flag: St. Helena",
+        "codePoint": "1F1F8 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-slovenia",
+        "character": "🇸🇮",
+        "unicodeName": "flag: Slovenia",
+        "codePoint": "1F1F8 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-svalbard-jan-mayen",
+        "character": "🇸🇯",
+        "unicodeName": "flag: Svalbard & Jan Mayen",
+        "codePoint": "1F1F8 1F1EF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-slovakia",
+        "character": "🇸🇰",
+        "unicodeName": "flag: Slovakia",
+        "codePoint": "1F1F8 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sierra-leone",
+        "character": "🇸🇱",
+        "unicodeName": "flag: Sierra Leone",
+        "codePoint": "1F1F8 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-san-marino",
+        "character": "🇸🇲",
+        "unicodeName": "flag: San Marino",
+        "codePoint": "1F1F8 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-senegal",
+        "character": "🇸🇳",
+        "unicodeName": "flag: Senegal",
+        "codePoint": "1F1F8 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-somalia",
+        "character": "🇸🇴",
+        "unicodeName": "flag: Somalia",
+        "codePoint": "1F1F8 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-suriname",
+        "character": "🇸🇷",
+        "unicodeName": "flag: Suriname",
+        "codePoint": "1F1F8 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-south-sudan",
+        "character": "🇸🇸",
+        "unicodeName": "flag: South Sudan",
+        "codePoint": "1F1F8 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sao-tome-principe",
+        "character": "🇸🇹",
+        "unicodeName": "flag: São Tomé & Príncipe",
+        "codePoint": "1F1F8 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-el-salvador",
+        "character": "🇸🇻",
+        "unicodeName": "flag: El Salvador",
+        "codePoint": "1F1F8 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-sint-maarten",
+        "character": "🇸🇽",
+        "unicodeName": "flag: Sint Maarten",
+        "codePoint": "1F1F8 1F1FD",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-syria",
+        "character": "🇸🇾",
+        "unicodeName": "flag: Syria",
+        "codePoint": "1F1F8 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-eswatini",
+        "character": "🇸🇿",
+        "unicodeName": "flag: Eswatini",
+        "codePoint": "1F1F8 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tristan-da-cunha",
+        "character": "🇹🇦",
+        "unicodeName": "flag: Tristan da Cunha",
+        "codePoint": "1F1F9 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-turks-caicos-islands",
+        "character": "🇹🇨",
+        "unicodeName": "flag: Turks & Caicos Islands",
+        "codePoint": "1F1F9 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-chad",
+        "character": "🇹🇩",
+        "unicodeName": "flag: Chad",
+        "codePoint": "1F1F9 1F1E9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-french-southern-territories",
+        "character": "🇹🇫",
+        "unicodeName": "flag: French Southern Territories",
+        "codePoint": "1F1F9 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-togo",
+        "character": "🇹🇬",
+        "unicodeName": "flag: Togo",
+        "codePoint": "1F1F9 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-thailand",
+        "character": "🇹🇭",
+        "unicodeName": "flag: Thailand",
+        "codePoint": "1F1F9 1F1ED",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tajikistan",
+        "character": "🇹🇯",
+        "unicodeName": "flag: Tajikistan",
+        "codePoint": "1F1F9 1F1EF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tokelau",
+        "character": "🇹🇰",
+        "unicodeName": "flag: Tokelau",
+        "codePoint": "1F1F9 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-timor-leste",
+        "character": "🇹🇱",
+        "unicodeName": "flag: Timor-Leste",
+        "codePoint": "1F1F9 1F1F1",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-turkmenistan",
+        "character": "🇹🇲",
+        "unicodeName": "flag: Turkmenistan",
+        "codePoint": "1F1F9 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tunisia",
+        "character": "🇹🇳",
+        "unicodeName": "flag: Tunisia",
+        "codePoint": "1F1F9 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tonga",
+        "character": "🇹🇴",
+        "unicodeName": "flag: Tonga",
+        "codePoint": "1F1F9 1F1F4",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-turkey",
+        "character": "🇹🇷",
+        "unicodeName": "flag: Turkey",
+        "codePoint": "1F1F9 1F1F7",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-trinidad-tobago",
+        "character": "🇹🇹",
+        "unicodeName": "flag: Trinidad & Tobago",
+        "codePoint": "1F1F9 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tuvalu",
+        "character": "🇹🇻",
+        "unicodeName": "flag: Tuvalu",
+        "codePoint": "1F1F9 1F1FB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-taiwan",
+        "character": "🇹🇼",
+        "unicodeName": "flag: Taiwan",
+        "codePoint": "1F1F9 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-tanzania",
+        "character": "🇹🇿",
+        "unicodeName": "flag: Tanzania",
+        "codePoint": "1F1F9 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-ukraine",
+        "character": "🇺🇦",
+        "unicodeName": "flag: Ukraine",
+        "codePoint": "1F1FA 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-uganda",
+        "character": "🇺🇬",
+        "unicodeName": "flag: Uganda",
+        "codePoint": "1F1FA 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-u-s-outlying-islands",
+        "character": "🇺🇲",
+        "unicodeName": "flag: U.S. Outlying Islands",
+        "codePoint": "1F1FA 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-united-nations",
+        "character": "🇺🇳",
+        "unicodeName": "flag: United Nations",
+        "codePoint": "1F1FA 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-united-states",
+        "character": "🇺🇸",
+        "unicodeName": "flag: United States",
+        "codePoint": "1F1FA 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-uruguay",
+        "character": "🇺🇾",
+        "unicodeName": "flag: Uruguay",
+        "codePoint": "1F1FA 1F1FE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-uzbekistan",
+        "character": "🇺🇿",
+        "unicodeName": "flag: Uzbekistan",
+        "codePoint": "1F1FA 1F1FF",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-vatican-city",
+        "character": "🇻🇦",
+        "unicodeName": "flag: Vatican City",
+        "codePoint": "1F1FB 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-st-vincent-grenadines",
+        "character": "🇻🇨",
+        "unicodeName": "flag: St. Vincent & Grenadines",
+        "codePoint": "1F1FB 1F1E8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-venezuela",
+        "character": "🇻🇪",
+        "unicodeName": "flag: Venezuela",
+        "codePoint": "1F1FB 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-british-virgin-islands",
+        "character": "🇻🇬",
+        "unicodeName": "flag: British Virgin Islands",
+        "codePoint": "1F1FB 1F1EC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-u-s-virgin-islands",
+        "character": "🇻🇮",
+        "unicodeName": "flag: U.S. Virgin Islands",
+        "codePoint": "1F1FB 1F1EE",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-vietnam",
+        "character": "🇻🇳",
+        "unicodeName": "flag: Vietnam",
+        "codePoint": "1F1FB 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-vanuatu",
+        "character": "🇻🇺",
+        "unicodeName": "flag: Vanuatu",
+        "codePoint": "1F1FB 1F1FA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-wallis-futuna",
+        "character": "🇼🇫",
+        "unicodeName": "flag: Wallis & Futuna",
+        "codePoint": "1F1FC 1F1EB",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-samoa",
+        "character": "🇼🇸",
+        "unicodeName": "flag: Samoa",
+        "codePoint": "1F1FC 1F1F8",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-kosovo",
+        "character": "🇽🇰",
+        "unicodeName": "flag: Kosovo",
+        "codePoint": "1F1FD 1F1F0",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-yemen",
+        "character": "🇾🇪",
+        "unicodeName": "flag: Yemen",
+        "codePoint": "1F1FE 1F1EA",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-mayotte",
+        "character": "🇾🇹",
+        "unicodeName": "flag: Mayotte",
+        "codePoint": "1F1FE 1F1F9",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-south-africa",
+        "character": "🇿🇦",
+        "unicodeName": "flag: South Africa",
+        "codePoint": "1F1FF 1F1E6",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-zambia",
+        "character": "🇿🇲",
+        "unicodeName": "flag: Zambia",
+        "codePoint": "1F1FF 1F1F2",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-zimbabwe",
+        "character": "🇿🇼",
+        "unicodeName": "flag: Zimbabwe",
+        "codePoint": "1F1FF 1F1FC",
+        "group": "flags",
+        "subGroup": "country-flag"
+    },
+    {
+        "slug": "flag-england",
+        "character": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "unicodeName": "flag: England",
+        "codePoint": "1F3F4 E0067 E0062 E0065 E006E E0067 E007F",
+        "group": "flags",
+        "subGroup": "subdivision-flag"
+    },
+    {
+        "slug": "flag-scotland",
+        "character": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "unicodeName": "flag: Scotland",
+        "codePoint": "1F3F4 E0067 E0062 E0073 E0063 E0074 E007F",
+        "group": "flags",
+        "subGroup": "subdivision-flag",
+        "parent": "black-flag"
+    },
+    {
+        "slug": "flag-wales",
+        "character": "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
+        "unicodeName": "flag: Wales",
+        "codePoint": "1F3F4 E0067 E0062 E0077 E006C E0073 E007F",
+        "group": "flags",
+        "subGroup": "subdivision-flag",
+        "parent": "black-flag"
+    }
+]
