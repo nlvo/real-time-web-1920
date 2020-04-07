@@ -15,21 +15,26 @@ app
 	});
 
 io.on('connection', (socket) => {
-    let userName = 'anonymous';
-    socket.local.emit('server message', `🤖:Welcome ${userName}! Say Hi 👋, in your native language.`);
-    socket.broadcast.emit('server message', `A new user with the username ${userName} connected`);
+    let username = 'anonymous';
+    const bot = 'robot 🤖';
+    // const message = `Welcome ${userName}! Say Hi 👋, in your native language.`;
+    // const newUserMessage = `A new user with the username ${userName} connected`;
+    socket.local.emit('server message', { bot, username });
+    socket.broadcast.emit('server message', { bot, username});
 
-    socket.on('set user', (username) => {
-        userName = username;
-        socket.local.emit('server message', `Welcome ${userName}!`);
-        socket.broadcast.emit('server message', `Anonymous username changed username to ${userName}`);
+    socket.on('set user', (name) => {
+        username = name;
+        const welcomeMessage = `Welcome ${name}!`;
+        const usernameMessage = `Anonymous username changed username to ${name}`;
+        socket.local.emit('server message', { bot, username });
+        socket.broadcast.emit('server message', { bot, username  });
     })
     
     socket.on('chat', async (msg) => {
-        const username = userName;
+        // const username = username;
         const flags = await getFlags(msg);
 		socket.local.emit('chat', { msg, username: 'You', flags })
-		socket.broadcast.emit('chat', { msg, username: username, flags })
+		socket.broadcast.emit('chat', { msg, username, flags })
 	});
 });
 

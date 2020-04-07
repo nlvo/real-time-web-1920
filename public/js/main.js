@@ -27,11 +27,17 @@ function getFlags (character) {
 	}
 }
 
-socket.on('server message', (msg) => {
+socket.on('server message', (server) => {
 	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const username = document.createElement('span');
 	li.classList.add('server');
-	console.log(msg);
-	li.append(msg);
+
+
+	username.append(server.username)
+	span.append(server.bot)
+	console.log(username)
+	li.append(span, 'Welcome ', username, '! Say Hi 👋, in your native language.');
 	messageList.append(li);
 });
 
@@ -46,7 +52,7 @@ socket.on('chat', (msg) => {
 		li.classList.add('me');	
 	}
 	// console.log(username)
-	span.append(username)
-	li.append(span, `${message}${flags}`);
+	span.append(`${username} ${flags}`)
+	li.append(span, `${message}`);
 	messageList.append(li);
 });

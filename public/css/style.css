@@ -24,7 +24,7 @@ body {
     background-color: var(--steel-300);
     color: var(--grey-900);
     font-family: Arial, Helvetica, sans-serif;
-    font-style: 1em;
+    font-size: 1em;
     margin: 0;
 }
 
@@ -44,14 +44,22 @@ ul li {
     min-height: 1em;
 }
 
-ul li span {
+ul li span:last-of-type {
+    color: var(--teal-800);
+    font-style: italic;
+    display: inline-block;
+}
+
+ul li span,
+ul li span:first-of-type {
     color: var(--steel-700);
+    /* font-style: normal; */
     text-transform: lowercase;
     display: block;
 }
 
 ul li.server {
-    background-color: var(--steel-400);
+    background-color: var(--steel-200);
     align-self: flex-start;
 }
 
@@ -63,6 +71,7 @@ ul li.me {
 
 ul li.me span {
     color: var(--teal-700);
+    display: block;
 }
 
 main {
