@@ -37,6 +37,7 @@ socket.on('server message', (msg) => {
 
 socket.on('chat', (msg) => {
 	const li = document.createElement('li');
+	const span = document.createElement('span');
 	// const flags = getFlags(msg.flags);
 	const flags = msg.flags;
 	const message = msg.msg;
@@ -45,6 +46,7 @@ socket.on('chat', (msg) => {
 		li.classList.add('me');	
 	}
 	// console.log(username)
-	li.append(`${message} ${flags}`);
+	span.append(username)
+	li.append(span, `${message}${flags}`);
 	messageList.append(li);
 });

@@ -16,7 +16,7 @@ app
 
 io.on('connection', (socket) => {
     let userName = 'anonymous';
-    socket.local.emit('server message', `Welcome ${userName}! Say Hi 👋, in your native language.`);
+    socket.local.emit('server message', `🤖:Welcome ${userName}! Say Hi 👋, in your native language.`);
     socket.broadcast.emit('server message', `A new user with the username ${userName} connected`);
 
     socket.on('set user', (username) => {
@@ -27,10 +27,9 @@ io.on('connection', (socket) => {
     
     socket.on('chat', async (msg) => {
         const username = userName;
-        console.log('user', username)
         const flags = await getFlags(msg);
 		socket.local.emit('chat', { msg, username: 'You', flags })
-		socket.broadcast.emit('chat', { msg, username: userName, flags })
+		socket.broadcast.emit('chat', { msg, username: username, flags })
 	});
 });
 
