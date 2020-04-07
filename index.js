@@ -18,11 +18,10 @@ async function get(url) {
 
 async function getCountries(msg) {
     const greetingsCountries = greetings.filter(greetings => {
-        if (msg == greetings.specialCharacters || msg == greetings.string) { 
+        if(msg.match(new RegExp(greetings.string, 'i'))|| msg.match(new RegExp(greetings.specialCharacters, 'i'))){
             return greetings.country 
         }
-    }).map(countries => `flag-${countries.country.replace(/\s+/g, '-').toLowerCase()}`)
-
+    }).map(countries => countries.country.replace(/\s+/g, '-'))
     return greetingsCountries
 }
 
@@ -30,7 +29,7 @@ async function getLocalFlags(msg) {
     const countries = await getCountries(msg);
     return flagsJson.filter(flag => {
         for(let i = 0; i < countries.length; i++ ){
-            if(flag.slug == countries[i]){
+            if(flag.slug.match(new RegExp(countries[i], 'i'))){
                 return flag.character
             }
         }
@@ -50,7 +49,7 @@ async function getFlags(msg){
 async function getApiFlags(msg) {
     const countries = await getCountries(msg);
     for(let i = 0; i < countries.length; i++ ){
-        if(flag.slug == countries[i]){
+        if(flag.slug.match(new RegExp(countries[i], 'i'))){
             const flags = await get(`https://emoji-api.com/emojis?search=${countries[i]}&access_key=faf6d35ecf5a5e87d3acc2cfb51de3d62e392dd7`)
             return flags.character
         }
