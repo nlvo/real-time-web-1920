@@ -15,6 +15,7 @@ form.addEventListener('submit', function (event) {
 formUser.addEventListener('submit', function (event) {
 	event.preventDefault();
 	socket.emit('set user', username.value)
+	this.style.opacity = '0';
 	return false;
 });
 
@@ -26,24 +27,24 @@ function getFlags (character) {
 	}
 }
 
-socket.on('server message', (flags) => {
+socket.on('server message', (msg) => {
 	const li = document.createElement('li');
 	li.classList.add('server');
-	console.log(flags);
-	li.append(flags);
+	console.log(msg);
+	li.append(msg);
 	messageList.append(li);
 });
 
 socket.on('chat', (msg) => {
 	const li = document.createElement('li');
-	const flags = getFlags(msg.flags);
+	// const flags = getFlags(msg.flags);
+	const flags = msg.flags;
 	const message = msg.msg;
 	const username = msg.username;
 	if(username == 'You') {
 		li.classList.add('me');	
 	}
-	console.log(username)
-	li.append(`${username}: ${message}`);
-	li.append(msg.flags);
+	// console.log(username)
+	li.append(`${message} ${flags}`);
 	messageList.append(li);
 });
