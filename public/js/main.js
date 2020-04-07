@@ -28,6 +28,7 @@ function getFlags (character) {
 
 socket.on('server message', (flags) => {
 	const li = document.createElement('li');
+	li.classList.add('server');
 	console.log(flags);
 	li.append(flags);
 	messageList.append(li);
@@ -36,8 +37,13 @@ socket.on('server message', (flags) => {
 socket.on('chat', (msg) => {
 	const li = document.createElement('li');
 	const flags = getFlags(msg.flags);
-	console.log(msg)
-	li.append(msg.msg);
+	const message = msg.msg;
+	const username = msg.username;
+	if(username == 'You') {
+		li.classList.add('me');	
+	}
+	console.log(username)
+	li.append(`${username}: ${message}`);
 	li.append(msg.flags);
 	messageList.append(li);
 });

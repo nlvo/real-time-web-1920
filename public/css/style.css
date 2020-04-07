@@ -1,0 +1,93 @@
+:root {
+    --steel-000: #FFFFFF;
+    --steel-100: #F6F7F9;
+    --steel-200: #E7EBEF;
+    --steel-300: #D9DFE6;
+    --steel-400: #bdc6d3;
+    --steel-500: #A0AEC0;
+    --steel-600: #909DAD;
+    --steel-700: #606873;
+    --steel-800: #484E56;
+    --steel-900: #30343A;
+    --teal-100: #EBF7F7;
+    --teal-200: #CDECEA;
+    --teal-300: #AFE0DE;
+    --teal-400: #74C9C5;
+    --teal-500: #38B2AC;
+    --teal-600: #32A09B;
+    --teal-700: #226B67;
+    --teal-800: #19504D;
+    --teal-900: #113534;
+}
+
+body {
+    background-color: var(--steel-300);
+    color: var(--grey-900);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+ul li {
+    background-color: var(--steel-000);
+    list-style-type: none;
+    border-radius: 2em;
+    padding: .25em 1em;
+    margin: 1em 0;
+    min-height: 1em;
+}
+
+ul li.server {
+    background-color: var(--steel-400);
+    align-self: flex-start;
+}
+
+ul li.me {
+    align-self: flex-start;
+    background-color: var(--teal-400);
+    color: var(--teal-900);
+}
+
+main {
+    position: relative;
+    /* height: 100vh; */
+}
+
+#message-form {
+    background-color: var(--steel-000);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset legend {
+    opacity: 0;
+    height: 0;
+}
+
+#user-form {
+
+}
+
+#user-form:before {
+    content: '';
+    /* background-color: rgba(48, 52, 58, .3); */
+    /* background-color: var(--steel-000); */
+    height: 100%;
+    width: 100%;
+    display: block;
+    z-index: -1;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+}

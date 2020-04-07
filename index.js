@@ -17,9 +17,8 @@ async function get(url) {
 }
 
 async function getCountries(msg) {
-    // console.log(msg)
     const greetingsCountries = greetings.filter(greetings => {
-        if (msg == greetings.string) { 
+        if (msg == greetings.specialCharacters || msg == greetings.string) { 
             return greetings.country 
         }
     }).map(countries => `flag-${countries.country.replace(/\s+/g, '-').toLowerCase()}`)
@@ -39,21 +38,23 @@ async function getLocalFlags(msg) {
 }
 
 async function getFlags(msg){
-    const api = await get('https://emoji-api.com/emojis?search=tulp')
     try {
-        console.log('hi');
-        // console.log(api.status);
+        const apiFlags = await getApiFlags(msg);
+        // return apiFlags;
+    } catch(error) {
         const localFlags = await getLocalFlags(msg);
         return localFlags;
-    } catch(error) {
-        const apiFlags = await getApiFlags(msg);
-        return apiFlags;
     }
 }
 
 async function getApiFlags(msg) {
     const countries = await getCountries(msg);
-    const flags = await get(`https://emoji-api.com/emojis?search=${countries}&access_key=faf6d35ecf5a5e87d3acc2cfb51de3d62e392dd7`)
+    for(let i = 0; i < countries.length; i++ ){
+        if(flag.slug == countries[i]){
+            const flags = await get(`https://emoji-api.com/emojis?search=${countries[i]}&access_key=faf6d35ecf5a5e87d3acc2cfb51de3d62e392dd7`)
+            return flags.character
+        }
+    }
     return flags
 }
 
@@ -66,18 +67,21 @@ app
 
 io.on('connection', (socket) => {
     let userName = 'anonymous';
-    socket.emit('server message', 'Welcome! Say Hi 👋, in your native language.');
+    socket.local.emit('server message', 'Welcome! Say Hi 👋, in your native language.');
     socket.broadcast.emit('server message', `A new user with the username ${userName} connected`);
 
-    socket.on('set user', (id) => {
-        userName = id;
-        socket.emit('server message', `Server welcome ${userName}`);
-        socket.broadcast.emit('server message', `Server User with username ${userName} connected`);
+    socket.on('set user', (username) => {
+        userName = username;
+        socket.local.emit('server message', `Welcome ${userName}!`);
+        socket.broadcast.emit('server message', `Anonymous username changed username to ${userName}`);
     })
     
     socket.on('chat', async (msg) => {
+        const username = userName;
+        console.log('user', username)
         const flags = await getFlags(msg);
-		io.emit('chat', { msg, flags })
+		socket.local.emit('chat', { msg, username: 'You', flags })
+		socket.broadcast.emit('chat', { msg, username: userName, flags })
 	});
 });
 
