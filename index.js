@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const getFlags = require('./models/api');
+const api = require('./models/api');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
@@ -17,24 +17,29 @@ app
 io.on('connection', (socket) => {
     let username = 'anonymous';
     const bot = 'robot 🤖';
-    // const message = `Welcome ${userName}! Say Hi 👋, in your native language.`;
-    // const newUserMessage = `A new user with the username ${userName} connected`;
-    socket.local.emit('server message', { bot, username });
-    socket.broadcast.emit('server message', { bot, username});
+    const local = true;
+    socket.local.emit('server message', { bot, username, local });
+    socket.broadcast.emit('server message', { bot, username });
 
     socket.on('set user', (name) => {
         username = name;
-        const welcomeMessage = `Welcome ${name}!`;
-        const usernameMessage = `Anonymous username changed username to ${name}`;
-        socket.local.emit('server message', { bot, username });
-        socket.broadcast.emit('server message', { bot, username  });
+        socket.local.emit('server user message', { bot, username, local });
+        socket.broadcast.emit('server user message', { bot, username });
     })
     
     socket.on('chat', async (msg) => {
-        // const username = username;
-        const flags = await getFlags(msg);
+        
+        const flags = await api.getFlags(msg);
+        const command = await api.getCommand(msg);
+        // console.log(command)
 		socket.local.emit('chat', { msg, username: 'You', flags })
 		socket.broadcast.emit('chat', { msg, username, flags })
+        // const language = await api.getLanguage(msg);
+        // console.log(language);
+        console.log(command);
+        
+        socket.emit('learning bot', {bot, command})
+        socket.emit('language bot', {bot, language: command[0]})
 	});
 });
 

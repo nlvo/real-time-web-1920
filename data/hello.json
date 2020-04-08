@@ -1,10 +1,4 @@
 [{
-    "locale": "af",
-    "language": "Afrikaans",
-    "country": "South Africa",
-    "specialCharacters": "Hallo",
-    "string": "Hallo"
-}, {
     "locale": "ar",
     "language": "Arabic",
     "country": "United Arab Emirates",
@@ -74,8 +68,8 @@
     "locale": "de",
     "language": "German",
     "country": "Germany",
-    "specialCharacters": "Hallo",
-    "string": "Hallo"
+    "specialCharacters": "Guttentag",
+    "string": "Guttentag"
 }, {
     "locale": "el",
     "language": "Greek",
@@ -84,10 +78,16 @@
     "string": "Geiá sou"
 }, {
     "locale": "en",
-    "language": "English",
+    "language": "British English",
     "country": "United Kingdom",
     "specialCharacters": "Hello",
     "string": "Hello"
+}, {
+    "locale": "en",
+    "language": "American English",
+    "country": "United States",
+    "specialCharacters": "Hi",
+    "string": "Hi"
 }, {
     "locale": "es",
     "language": "Spanish",
@@ -155,12 +155,6 @@
     "specialCharacters": "नमस्कार",
     "string": "Namaskaar"
 }, {
-    "locale": "hmn",
-    "language": "Hmong",
-    "country": "Hmong",
-    "specialCharacters": "Hello",
-    "string": "Hello"
-}, {
     "locale": "hr",
     "language": "Croatian",
     "country": "Croatia",
@@ -196,12 +190,6 @@
     "country": "Igbo",
     "specialCharacters": "Nnọọ",
     "string": "Nnọọ"
-}, {
-    "locale": "is",
-    "language": "Icelandic",
-    "country": "Iceland",
-    "specialCharacters": "Halló",
-    "string": "Halló"
 }, {
     "locale": "it",
     "language": "Italian",
@@ -317,12 +305,6 @@
     "specialCharacters": "नमस्कार",
     "string": "Namaskaar"
 }, {
-    "locale": "ms",
-    "language": "Malay",
-    "country": "Malay",
-    "specialCharacters": "Hello",
-    "string": "Hello"
-}, {
     "locale": "mt",
     "language": "Maltese",
     "country": "Malta",
@@ -344,12 +326,6 @@
     "locale": "nl",
     "language": "Dutch",
     "country": "Netherlands",
-    "specialCharacters": "Hallo",
-    "string": "Hallo"
-}, {
-    "locale": "no",
-    "language": "Norwegian",
-    "country": "Norway",
     "specialCharacters": "Hallo",
     "string": "Hallo"
 }, {
@@ -509,39 +485,9 @@
     "specialCharacters": "Xin chào",
     "string": "Xin chào"
 }, {
-    "locale": "yi",
-    "language": "Yiddish",
-    "country": "Yiddish",
-    "specialCharacters": "העלא",
-    "string": "Hela"
-}, {
-    "locale": "yo",
-    "language": "Yoruba",
-    "country": "Yoruba",
-    "specialCharacters": "Pẹlẹ o",
-    "string": "Pẹlẹ o"
-}, {
     "locale": "zh",
     "language": "Chinese",
     "country": "China",
     "specialCharacters": "你好",
     "string": "Nǐ hǎo"
-}, {
-    "locale": "zh-CN",
-    "language": "Chinese (Simplified)",
-    "country": "China",
-    "specialCharacters": "你好",
-    "string": "Nǐ hǎo"
-}, {
-    "locale": "zh-TW",
-    "language": "Chinese (Traditional)",
-    "country": "Taiwan",
-    "specialCharacters": "你好",
-    "string": "Nǐ hǎo"
-}, {
-    "locale": "zu",
-    "language": "Zulu",
-    "country": "KwaZulu-Natal (ZA-NL)",
-    "specialCharacters": "Sawubona",
-    "string": "Sawubona"
 }]
