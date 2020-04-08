@@ -1,41 +1,95 @@
-# Real-Time Web @cmda-minor-web · 2019-2020
+# Real time web application with Emoji API
+A chat app where you can learn with and from other users. Users can say *Hello* in their native language to let others know, what language they speak. So those who would like to learn the language, can learn from the native speakers themself.
 
-During this course you will learn how to build a **meaningful** real-time application. You will learn techniques to setup an open connection between the client and the server. This will enable you to send data in real-time both ways, at the same time.
+But to get a little closer with those native speakers, they could ask the *language bot* how to say *Hello* in a specific language.
 
-## Goals
-- _Deal with real-time complexity_
-- _Handle real-time client-server interaction_
-- _Handle real-time data management_
-- _Handle multi-user support_
+![mockup from Progressive Web App with the Marvel API]()
+[live demo link](https://chat-nlvo.herokuapp.com/)
 
-[Rubric][rubric]
+## Installation
+```
+# Clone or download the repository
+$ git clone https://github.com/nlvo/real-time-web-1920.git
 
-## Curriculum
+# Install dependencies
+npm install
 
-### Week 1 - Hello Server
+# Dev
+npm run dev
 
-Goal: Build and deploy a unique barebone real-time app  
+# Production
+npm start
 
-[Exercises](https://github.com/cmda-minor-web/real-time-web-1819/blob/master/week-1.md)    
-[Slides](https://docs.google.com/presentation/d/1EVsEFgBnG699nce058ss_PkVJROQXDp5wJJ-IRXvzTA/edit?usp=sharing)  
+# Enviroment
+create .env file with PORT and API_KEY
 
+# Open localhost:3000
+```
+## API
+To use the Emoji API you'll need an **API key**
 
-### Week 2 - Sharing is caring  
+The Emoji API’s base endpoint is `https://emoji-api.com/`. The API has a few endpoints to choose from. We will be using the search endpoint.
 
-Goal: Store, manipulate and share data between server-client   
+- All emojis
+- Search
+- A single emoji
+- Categories
+- Emojis in a category
 
-[Exercises](https://github.com/cmda-minor-web/real-time-web-1819/blob/master/week-2.md)    
-[Slides](https://docs.google.com/presentation/d/1woKoY59D8Zcttna0FzfNjEtGtT8oXWi9b5LYlukRISM/edit?usp=sharing)
+### Search
+This is an example endpoint to query emojis by a searchstring
 
+`https://emoji-api.com/emojis?search=vietnam&access_key=yourApiKey`
 
-### Week 3 - Let’s take this show on the road 
+#### Data example
+```
+[
+    {
+        "slug": "flag-vietnam",
+        "character": "🇻🇳",
+        "unicodeName": "flag: Vietnam",
+        "codePoint": "1F1FB 1F1F3",
+        "group": "flags",
+        "subGroup": "country-flag"
+    }
+]
+```
+More about the [api](https://emoji-api.com/) in the Emoji API documentation.
 
-Goal: Handle data sharing and multi-user support 
+### Rate Limit
+Since the api is under development it is not unknown what the exact limit is. From what I can tell it isn't much, which I created a fallback for.
 
-[Exercises](https://github.com/cmda-minor-web/real-time-web-1819/blob/master/week-3.md)  
-[Slides](https://docs.google.com/presentation/d/1SHofRYg87bhdqhv7DQb_HZMbW7Iq1PtqxpdtZHMbMmk/edit?usp=sharing)
+For more information you can refer to the [Emoji API documentation](https://developer.marvel.com/documentation/).
 
-> If you're seeing this message on a forked repo, it means one of our students hasn't changed the description yet 😈
+## Message types
+### Client
+`set user` - Set your username
+`chat message` - Send a chat message to other people in the chat
+
+### Server
+`server message` - Send a server notification to clients
+`learning bot` - Send answers/translation to user/client
+`language bot` - Sends tips on how to learn to say *Hello* in other languages to user/client
+
+## ToDo
+Things/features I would like to add. For more info see [project marvel](https://github.com/nlvo/real-time-web-1920/projects/1)
+- [x] chat
+    - [x] commands
+    - [ ] personal flag
+    - [ ] save language
+- [x] api
+
+## Shoutout
+- Guido for the code example/explanation to set users.
+- Maikel for explaining how to use regex.
+
+## Sources
+[Tailwind colors](https://tailwindcss.com/)
+[App to translate a word to multiple languages](https://translatr.varunmalhotra.xyz/)
+[Socket IO](https://socket.io/get-started/chat/)
+
+### License
+Copyright © 2020, [Lien Vo](https://github.com/nlvo) . Released under the [MIT license](https://github.com/nlvo/web-app-from-scratch-1920/blob/master/LICENSE).
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
@@ -43,7 +97,7 @@ Goal: Handle data sharing and multi-user support
 
 <!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+<!-- Add a nice poster image here at the end of the week, showing off your shiny frontend 📸 -->
 
 <!-- Maybe a table of contents here? 📚 -->
 
@@ -53,10 +107,6 @@ Goal: Handle data sharing and multi-user support
 
 <!-- What external data source is featured in your project and what are its properties 🌠 -->
 
-<!-- This would be a good place for your data life cycle ♻️-->
-
 <!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- How about a license here? 📜  -->
-
-[rubric]: https://docs.google.com/spreadsheets/d/e/2PACX-1vSd1I4ma8R5mtVMyrbp6PA2qEInWiOialK9Fr2orD3afUBqOyvTg_JaQZ6-P4YGURI-eA7PoHT8TRge/pubhtml
+<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->

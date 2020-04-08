@@ -54,7 +54,7 @@ async function getApiFlags(msg) {
     // console.log(countries)
     for(let i = 0; i < countries.length; i++ ){
         if(flag.slug.match(new RegExp(countries[i], 'g'))){
-            const flags = await get(`https://emoji-api.com/emojis?search=${countries[i]}&access_key=${process.env.ACCESS_KEY}`)
+            const flags = await get(`https://emoji-api.com/emojis?search=${countries[i]}&access_key=${process.env.API_KEY}`)
             return flags.character
         }
     }
