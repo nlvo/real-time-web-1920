@@ -69,43 +69,57 @@ socket.on('server message', (server) => {
 // 	}
 // }
 
-socket.on('language bot', (chat) => {
-	console.log('alo', chat.language)
-	const li = document.createElement('li');
-	const tip = document.createElement('li');
-	const span = document.createElement('span');
-	const spanTip = document.createElement('span');
-	tip.classList.add('learn');
+// socket.on('language bot', (chat) => {
+// 	console.log('language bot', chat.language)
+// 	const li = document.createElement('li');
+// 	const tip = document.createElement('li');
+// 	const span = document.createElement('span');
+// 	const spanTip = document.createElement('span');
+// 	tip.classList.add('learn');
 
-	span.append(chat.bot)
-	li.append(span, `Means Hello in: ${chat.command.language}.`)
+// 	span.append(chat.bot)
+// 	li.append(span, `Means Hello in: ${chat.language}.`)
 	
-	spanTip.append(`🚨`)
-	tip.append(spanTip, ` Tip: want to learn a new language? use the command /hellokorean`)
-	messageList.append(li);
-	messageList.append(tip);
-});
+// 	spanTip.append(`🚨`)
+// 	tip.append(spanTip, ` Tip: want to learn a new language? use the command /hellokorean`)
+// 	messageList.append(li);
+// 	messageList.append(tip);
+// });
 
 socket.on('learning bot', (chat) => {
-	console.log(chat)
+	console.log('learning bot: ', chat)
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const spana = document.createElement('span');
+	const spanTip = document.createElement('span');
 
-	span.append(`Learning 🧠`)
-	spana.append(`Roman: ${chat.command.string}`)
-	li.append(span, `${chat.command.language}: ${chat.command.specialCharacters}`, spana)	
+	if(chat.command.language) {
+		span.append(`🧠 Learning`)
+		spana.append(`Roman: ${chat.command.string}`)
+		li.append(span, `${chat.command.language}: ${chat.command.specialCharacters}`, spana)	
+	} else if (chat.command.country.length > 0){
+		span.append(`Robot ${chat.command.flag[0]}`)
+		// li.append(span, `Means Hello in: ${chat.command[0]}.`)	
+		li.append(span, `Shout out to ${chat.command.country[0]}.`)	
+	} else {
+		spanTip.append(`🚨Tip`)
+		li.append(spanTip, `Want to learn a new language? use the command /hellokorean`)
+		li.classList.add('learn');
+	}
 
 	messageList.append(li);
 });
 
-socket.on('chat', (msg) => {
+socket.on('chat', (user) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
-	// const flags = getFlags(msg.flags);
-	const flags = msg.flags;
-	const message = msg.msg;
-	const username = msg.username;
+	const flags = user.flags;
+	console.log('flaggah', user);
+	
+
+	const message = user.msg.specialCharacters || user.msg.content;
+	
+	const username = user.username;
 	if(username == 'You') {
 		li.classList.add('me');	
 	}

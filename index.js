@@ -32,14 +32,14 @@ io.on('connection', (socket) => {
         const flags = await api.getFlags(msg);
         const command = await api.getCommand(msg);
         // console.log(command)
-		socket.local.emit('chat', { msg, username: 'You', flags })
-		socket.broadcast.emit('chat', { msg, username, flags })
+		socket.local.emit('chat', { msg: command, username: 'You', flags })
+		socket.broadcast.emit('chat', { msg: command, username, flags })
         // const language = await api.getLanguage(msg);
         // console.log(language);
-        console.log(command);
+        console.log('cmd', command);
         
-        socket.emit('learning bot', {bot, command})
-        socket.emit('language bot', {bot, language: command[0]})
+        socket.local.emit('learning bot', {bot, command})
+        // socket.emit('language bot', {bot, language: command[0]})
 	});
 });
 

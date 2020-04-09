@@ -3,7 +3,7 @@ A chat app where you can learn with and from other users. Users can say *Hello* 
 
 But to get a little closer with those native speakers, they could ask the *language bot* how to say *Hello* in a specific language.
 
-![mockup from Progressive Web App with the Marvel API]()
+![mockup from Real time web application with Emoji API]()
 [live demo link](https://chat-nlvo.herokuapp.com/)
 
 ## Installation
@@ -59,34 +59,35 @@ More about the [api](https://emoji-api.com/) in the Emoji API documentation.
 ### Rate Limit
 Since the api is under development it is not unknown what the exact limit is. From what I can tell it isn't much, which I created a fallback for.
 
-For more information you can refer to the [Emoji API documentation](https://developer.marvel.com/documentation/).
+For more information you can refer to the [Emoji API documentation](https://emoji-api.com/).
 
 ## Message types
 ### Client
-`set user` - Set your username
-`chat message` - Send a chat message to other people in the chat
+- `set user` - Set your username
+- `chat message` - Send a chat message to other people in the chat
 
 ### Server
-`server message` - Send a server notification to clients
-`learning bot` - Send answers/translation to user/client
-`language bot` - Sends tips on how to learn to say *Hello* in other languages to user/client
+- `server message` - Send a server notification to clients
+- `learning bot` - Send answers/translation/tips to user/client
 
 ## ToDo
-Things/features I would like to add. For more info see [project marvel](https://github.com/nlvo/real-time-web-1920/projects/1)
+Things/features I would like to add. For more info see [project emoji](https://github.com/nlvo/real-time-web-1920/projects/1)
 - [x] chat
     - [x] commands
+        - [x] hello
+        - [ ] words (dictonary/images)
     - [ ] personal flag
     - [ ] save language
 - [x] api
 
 ## Shoutout
-- Guido for the code example/explanation to set users.
+- Guido for the code example/explanation to set users. And the example readme about what's expected from us.
 - Maikel for explaining how to use regex.
 
 ## Sources
-[Tailwind colors](https://tailwindcss.com/)
-[App to translate a word to multiple languages](https://translatr.varunmalhotra.xyz/)
-[Socket IO](https://socket.io/get-started/chat/)
+- [Tailwind colors](https://tailwindcss.com/)
+- [App to translate a word to multiple languages](https://translatr.varunmalhotra.xyz/)
+- [Socket IO](https://socket.io/get-started/chat/)
 
 ### License
 Copyright © 2020, [Lien Vo](https://github.com/nlvo) . Released under the [MIT license](https://github.com/nlvo/web-app-from-scratch-1920/blob/master/LICENSE).

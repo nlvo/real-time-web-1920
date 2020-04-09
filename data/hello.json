@@ -78,13 +78,13 @@
     "string": "Geiá sou"
 }, {
     "locale": "en",
-    "language": "British English",
+    "language": "English",
     "country": "United Kingdom",
     "specialCharacters": "Hello",
     "string": "Hello"
 }, {
     "locale": "en",
-    "language": "American English",
+    "language": "English",
     "country": "United States",
     "specialCharacters": "Hi",
     "string": "Hi"

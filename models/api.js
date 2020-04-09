@@ -40,9 +40,11 @@ async function getGreetings(msg) {
 // .replace(/\s+/g, '-')
 async function getLocalFlags(msg) {
     const countries = await getCountries(msg);
+    
     return flagsJson.filter(flag => {
         for(let i = 0; i < countries.length; i++ ){
-            if(flag.slug.match(new RegExp(countries[i], 'i'))){
+            console.log('flag', countries[i], flag.slug );
+            if(flag.slug.match(new RegExp(countries[i].replace(/\s+/g, '-'), 'i'))){
                 return flag.character
             }
         }
@@ -62,14 +64,14 @@ async function getApiFlags(msg) {
 }
 
 async function getFlags(msg){
-    try {
-        const apiFlags = await getApiFlags(msg);
+    // try {
+        // const apiFlags = await getApiFlags(msg);
         // console.log(apiFlags)
         // return apiFlags;
-    } catch(error) {
+    // } catch(error) {
         const localFlags = await getLocalFlags(msg);
         return localFlags;
-    }
+    // }
 }
 
 async function getCommand(command) {
@@ -78,9 +80,11 @@ async function getCommand(command) {
         const greeting = await getGreetings(n[1]);
         return greeting[0]
     } else {
-        console.log('nocmd')
-        getFlags(command)
-        return getLanguage(command)
+        const flag = await getFlags(command)
+        // const language = await getLanguage(command)
+        const country = await getCountries(command);
+        
+        return { content: command, country, flag }
     }
 }
 
