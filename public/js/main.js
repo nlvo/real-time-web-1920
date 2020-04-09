@@ -8,6 +8,7 @@ const messageList = document.querySelector('ul');
 form.addEventListener('submit', function (event) {
 	event.preventDefault();
 	socket.emit('chat', message.value)
+	formUser.style.display = 'none';
 	message.value = '';
 });
 
@@ -19,9 +20,7 @@ formUser.addEventListener('submit', function (event) {
 });
 
 function getFlags (character) {
-	// console.log(character)
 	for(let i = 0; i < character.length; i++){
-		// console.log(character)
 		return character[i];
 	}
 }
@@ -98,7 +97,7 @@ socket.on('learning bot', (chat) => {
 		spana.append(`Roman: ${chat.command.string}`)
 		li.append(span, `${chat.command.language}: ${chat.command.specialCharacters}`, spana)	
 	} else if (chat.command.country.length > 0){
-		span.append(`Robot ${chat.command.flag[0]}`)
+		span.append(`Robot ${chat.command.flag}`)
 		// li.append(span, `Means Hello in: ${chat.command[0]}.`)	
 		li.append(span, `Shout out to ${chat.command.country[0]}.`)	
 	} else {

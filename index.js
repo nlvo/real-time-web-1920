@@ -28,18 +28,13 @@ io.on('connection', (socket) => {
     })
     
     socket.on('chat', async (msg) => {
-        
         const flags = await api.getFlags(msg);
         const command = await api.getCommand(msg);
-        // console.log(command)
+
 		socket.local.emit('chat', { msg: command, username: 'You', flags })
 		socket.broadcast.emit('chat', { msg: command, username, flags })
-        // const language = await api.getLanguage(msg);
-        // console.log(language);
-        console.log('cmd', command);
-        
+
         socket.local.emit('learning bot', {bot, command})
-        // socket.emit('language bot', {bot, language: command[0]})
 	});
 });
 
