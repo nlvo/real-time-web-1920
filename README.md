@@ -3,7 +3,7 @@ A chat app where you can learn with and from other users. Users can say *Hello* 
 
 But to get a little closer with those native speakers, they could ask the *language bot* how to say *Hello* in a specific language.
 
-![mockup from Real time web application with Emoji API]()
+![mockup from Real time web application with Emoji API](https://user-images.githubusercontent.com/8554238/78983242-1fc0f580-7b24-11ea-854c-c91594c42acc.png)
 [live demo link](https://chat-nlvo.herokuapp.com/)
 
 ## Installation
