@@ -57,7 +57,7 @@ This is an example endpoint to query emojis by a searchstring
 More about the [api](https://emoji-api.com/) in the Emoji API documentation.
 
 ### Rate Limit
-Since the api is under development it is not unknown what the exact limit is. From what I can tell it isn't much, which I created a fallback for.
+Since the api is under development it is unknown what the exact limit is. From what I can tell it isn't much, which is why I created a fallback for.
 
 For more information you can refer to the [Emoji API documentation](https://emoji-api.com/).
 
