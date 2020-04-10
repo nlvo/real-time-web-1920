@@ -123,6 +123,12 @@ main section {
     position: relative;
 }
 
+#message-form div label span:first-child {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
 #message-form div label span {
     display: block;
     position: absolute;
@@ -209,7 +215,7 @@ div legend {
     padding: 1em;
     height: 20em;
     width: 100%;
-    z-index: -1;
+    z-index: 1;
     opacity: 0;
     height: 0;
     transition: .3s height ease-in-out;
@@ -225,6 +231,11 @@ div legend {
     list-style: none;
 }
 
-.commands ul li span {
+.command {
     color: var(--steel-700);
+    width: .625em;
+}
+
+.command img {
+    width: 100%;
 }
