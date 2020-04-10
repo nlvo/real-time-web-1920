@@ -4,25 +4,27 @@
 <section>
 	<ul></ul>
 	<form id="user-form" class="user">
-		<fieldset>
+		<div>
 			<legend>Register</legend>
 			<label for="">
 				Choose a username
 				<input type="text" id="username">
 			</label>
 			<button form="user-form">Send</button>
-		</fieldset>
+		</div>
 	</form>
 </section>
 
 <form id="message-form">
-	<fieldset>
+	<div>
 		<legend>Chat</legend>
 		<label for="">
 			Write a message
 			<input type="text" id="message" placeholder="hello or /hellokorean" required>
+			<span class="command">cmd</span>
 		</label>
 		<button form="message-form">Send</button>
-	</fieldset>
+	</div>
 </form>
+
 <%- include ("partials/footer.ejs") %>

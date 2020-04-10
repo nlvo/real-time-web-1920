@@ -1,0 +1,9 @@
+<div class="commands">
+    <h2>Language list</h2>
+    <p>What language do you want to learn? Type '/' + chosen language</p>
+    <ul>
+        <% commands.forEach(element => {%>
+            <li><%= element.language %> <span>/<%= element.language %></span></li>
+        <% }) %>
+    </ul>
+</div>

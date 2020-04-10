@@ -41,7 +41,7 @@ ul {
     align-items: flex-start;
 }
 
-ul li {
+section ul li {
     background-color: var(--steel-000);
     list-style-type: none;
     border-radius: .625em;
@@ -92,6 +92,7 @@ ul li.me span {
 
 main {
     position: relative;
+    padding: 0 1em;
 }
 
 main section {
@@ -104,21 +105,72 @@ main section {
     background-color: var(--steel-000);
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
 }
 
-#message-form fieldset {
+#message-form div {
+    display: flex;
     padding: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#message-form div label {
+    align-items: center;
+    flex: 1;
+    display: flex;
+    position: relative;
 }
 
-fieldset {
+#message-form div label span {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 1.6em;
+}
+
+#message-form div label input {
+    background-color: var(--steel-200);
+    border: 0;
+    border-radius: .625em;
+    flex: 1;
+    padding: .5em;
+    margin: 0 1em;
+}
+
+input {
+    background-color: var(--steel-000);
+    border: 0;
+    border-radius: .625em;
+    flex: 1;
+    padding: .5em;
+    margin: 0 1em;
+}
+
+#message-form div button {
+    border: 0;
+    border-radius: .625em;
+    background-color: var(--teal-500);
+    color: var(--teal-900);
+}
+
+button {
+    border: 0;
+    border-radius: .625em;
+    background-color: var(--steel-500);
+    color: var(--steel-900);
+}
+
+div {
     border: none;
     padding: 0;
 }
 
-fieldset legend {
+div legend {
     opacity: 0;
     height: 0;
+    width: 0;
 }
 
 #user-form {
@@ -148,3 +200,31 @@ fieldset legend {
     position: absolute;
     top: 0;
 } */
+
+.commands {
+    background-color: var(--steel-000);
+    bottom: 4em;
+    overflow-x: scroll;
+    position: absolute;
+    padding: 1em;
+    height: 20em;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    height: 0;
+    transition: .3s height ease-in-out;
+}
+
+.commands.active {
+    height: 20em;
+    opacity: 1;
+}
+
+.commands ul li {
+    margin: .625em;
+    list-style: none;
+}
+
+.commands ul li span {
+    color: var(--steel-700);
+}

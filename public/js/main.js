@@ -3,12 +3,23 @@ const form = document.querySelector('#message-form');
 const formUser = document.querySelector('#user-form');
 const message = document.querySelector('#message');
 const username = document.querySelector('#username');
-const messageList = document.querySelector('ul');
+const messageList = document.querySelector('section ul');
+const commandList = document.querySelector('.commands');
+const command = document.querySelector('.command');
+
+command.addEventListener('click', function () {
+	if(commandList.classList.contains('active')) {
+		commandList.classList.remove('active');
+	} else {
+		commandList.classList.add('active');
+	}
+})
 
 form.addEventListener('submit', function (event) {
 	event.preventDefault();
 	socket.emit('chat', message.value)
 	formUser.style.display = 'none';
+	commandList.classList.remove('active');
 	message.value = '';
 });
 
@@ -24,6 +35,41 @@ function getFlags (character) {
 		return character[i];
 	}
 }
+
+socket.on('server local message', (server) => {
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const username = document.createElement('span');
+	li.classList.add('server');
+
+	username.append(server.username)
+	span.append(server.bot)
+	li.append(span, 'Welcome ', username, '! Say Hi 👋, in your native language.');
+	messageList.append(li);
+});
+
+socket.on('server message', (server) => {
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const username = document.createElement('span');
+	li.classList.add('server');
+
+	username.append(server.username)
+	li.append(span, username, ' joined');
+	messageList.append(li);
+});
+
+socket.on('server user left', (server) => {
+	console.log(server);
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const username = document.createElement('span');
+	li.classList.add('server');
+
+	username.append(server.username)
+	li.append(span, username, ' left');
+	messageList.append(li);
+});
 
 socket.on('server user message', (server) => {
 	const li = document.createElement('li');
@@ -42,49 +88,6 @@ socket.on('server user message', (server) => {
 	messageList.append(li);
 });
 
-socket.on('server message', (server) => {
-	const li = document.createElement('li');
-	const span = document.createElement('span');
-	const username = document.createElement('span');
-	li.classList.add('server');
-
-	username.append(server.username)
-	span.append(server.bot)
-	if (server.local) {
-		li.append(span, 'Welcome ', username, '! Say Hi 👋, in your native language.');
-	} else {
-		li.append(span, 'A new user with the username ', username, ' connected');
-	}
-	messageList.append(li);
-});
-
-// function createCheckboxes (value) {
-
-// 	for(let i = 0; i < value.length; i++) {
-// 		li.append(`<label for="">
-// 				${value[i]}
-// 			<input type="checkbox" id="${value[i]}">		
-// 		</label>`)
-// 	}
-// }
-
-// socket.on('language bot', (chat) => {
-// 	console.log('language bot', chat.language)
-// 	const li = document.createElement('li');
-// 	const tip = document.createElement('li');
-// 	const span = document.createElement('span');
-// 	const spanTip = document.createElement('span');
-// 	tip.classList.add('learn');
-
-// 	span.append(chat.bot)
-// 	li.append(span, `Means Hello in: ${chat.language}.`)
-	
-// 	spanTip.append(`🚨`)
-// 	tip.append(spanTip, ` Tip: want to learn a new language? use the command /hellokorean`)
-// 	messageList.append(li);
-// 	messageList.append(tip);
-// });
-
 socket.on('learning bot', (chat) => {
 	console.log('learning bot: ', chat)
 	const li = document.createElement('li');
@@ -99,7 +102,7 @@ socket.on('learning bot', (chat) => {
 	} else if (chat.command.country.length > 0){
 		span.append(`Robot ${chat.command.flag}`)
 		// li.append(span, `Means Hello in: ${chat.command[0]}.`)	
-		li.append(span, `Shout out to ${chat.command.country[0]}.`)	
+		li.append(span, `Hi to ${chat.command.country}.`)
 	} else {
 		spanTip.append(`🚨Tip`)
 		li.append(spanTip, `Want to learn a new language? use the command /hellokorean`)
@@ -109,15 +112,12 @@ socket.on('learning bot', (chat) => {
 	messageList.append(li);
 });
 
-socket.on('chat', (user) => {
+socket.on('user message', (user) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const flags = user.flags;
-	console.log('flaggah', user);
-	
 
 	const message = user.msg.specialCharacters || user.msg.content;
-	
 	const username = user.username;
 	if(username == 'You') {
 		li.classList.add('me');	

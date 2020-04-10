@@ -76,8 +76,12 @@ async function getFlags(msg){
 
 async function getCommand(command) {
     if(command.match(/[/](\w+)/ig)) {
-        const n = command.split('/hello')
+        const n = command.split('/')
+        console.log(n[1]);
+        
         const greeting = await getGreetings(n[1]);
+        console.log(greeting[0]);
+        
         return greeting[0]
     } else {
         const flag = await getFlags(command)

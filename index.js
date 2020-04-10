@@ -6,24 +6,24 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT;
+const commands = require('./data/hello.json')
 
 app
 	.use(express.static('public'))
 	.set('view engine', 'ejs')
 	.get('/', function (req, res) {
-		res.render('main')
+		res.render('main', { commands })
 	});
 
 io.on('connection', (socket) => {
     let username = 'anonymous';
     const bot = 'robot 🤖';
-    const local = true;
-    socket.local.emit('server message', { bot, username, local });
+    socket.local.emit('server local message', { bot, username });
     socket.broadcast.emit('server message', { bot, username });
 
     socket.on('set user', (name) => {
         username = name;
-        socket.local.emit('server user message', { bot, username, local });
+        socket.local.emit('server user message', { bot, username });
         socket.broadcast.emit('server user message', { bot, username });
     })
     
@@ -31,8 +31,8 @@ io.on('connection', (socket) => {
         const flags = await api.getFlags(msg);
         const command = await api.getCommand(msg);
 
-		socket.local.emit('chat', { msg: command, username: 'You', flags })
-		socket.broadcast.emit('chat', { msg: command, username, flags })
+		socket.local.emit('user message', { msg: command, username: 'You', flags })
+		socket.broadcast.emit('user message', { msg: command, username, flags })
 
         socket.local.emit('learning bot', {bot, command})
 	});
