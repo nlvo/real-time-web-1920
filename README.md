@@ -86,7 +86,7 @@ Things/features I would like to add. For more info see [project emoji](https://g
 
 ## Sources
 - [Tailwind colors](https://tailwindcss.com/)
-- [App to translate a word to multiple languages](https://translatr.varunmalhotra.xyz/)
+- [App to translate a word to multiple languages](https://translatr.constunmalhotra.xyz/)
 - [Socket IO](https://socket.io/get-started/chat/)
 
 ### License
