@@ -1,9 +1,8 @@
-# Real time web application with Emoji API
-A chat app where you can learn with and from other users. Users can say *Hello* in their native language to let others know, what language they speak. So those who would like to learn the language, can learn from the native speakers themself.
+# Real time web application with the Spotify API
+A chat app where you can listen to songs with others. Users could request a song.
 
-But to get a little closer with those native speakers, they could ask the *language bot* how to say *Hello* in a specific language.
-
-![mockup from Real time web application with Emoji API](https://user-images.githubusercontent.com/8554238/78983242-1fc0f580-7b24-11ea-854c-c91594c42acc.png)
+## Concept design
+![concept-luna](https://user-images.githubusercontent.com/8554238/79564611-498f9480-80af-11ea-9426-247e531a5f44.png)
 [live demo link](https://chat-nlvo.herokuapp.com/)
 
 ## Installation
@@ -21,47 +20,78 @@ npm run dev
 npm start
 
 # Enviroment
-create .env file with PORT and API_KEY
+create .env file which for example consist of the following
+PORT = your port
+CLIENT_ID = your client id
+CLIENT_SECRET = your client secret
+REDIRECT_URI = http://localhost:3000/callback/
 
 # Open localhost:3000
 ```
 ## API
-To use the Emoji API you'll need an **API key**
+The spotify API uses OAUTH. In order for you to use the Spotify API you'll need a few things
+- Client Id
+- Client Secret
+- Redirect uri
 
-The Emoji API’s base endpoint is `https://emoji-api.com/`. The API has a few endpoints to choose from. We will be using the search endpoint.
+The Emoji API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the playlist endpoint.
 
-- All emojis
-- Search
-- A single emoji
-- Categories
-- Emojis in a category
+### Playlist
+This is an example endpoint get a list of the current user's playlists
 
-### Search
-This is an example endpoint to query emojis by a searchstring
-
-`https://emoji-api.com/emojis?search=vietnam&access_key=yourApiKey`
+`/v1/me/playlists`
 
 #### Data example
 ```
-[
-    {
-        "slug": "flag-vietnam",
-        "character": "🇻🇳",
-        "unicodeName": "flag: Vietnam",
-        "codePoint": "1F1FB 1F1F3",
-        "group": "flags",
-        "subGroup": "country-flag"
-    }
-]
+{
+  "href": "https://api.spotify.com/v1/users/username/playlists?offset=0&limit=20",
+  "items": [
+	{
+	  "collaborative": false,
+	  "description": "",
+	  "external_urls": {
+		"spotify": "https://open.spotify.com/playlist/id"
+	  },
+	  "href": "https://api.spotify.com/v1/playlists/id",
+	  "id": "playlist_id",
+	  "images": [],
+	  "name": "radio",
+	  "owner": {
+		"display_name": "username",
+		"external_urls": {
+		  "spotify": "https://open.spotify.com/user/user_id"
+		},
+		"href": "https://api.spotify.com/v1/users/user_id",
+		"id": "user_id",
+		"type": "user",
+		"uri": "spotify:user:user_id"
+	  },
+	  "primary_color": null,
+	  "public": true,
+	  "snapshot_id": "snapshot_id",
+	  "tracks": {
+		"href": "https://api.spotify.com/v1/playlists/id/tracks",
+		"total": 0
+	  },
+	  "type": "playlist",
+	  "uri": "spotify:playlist:id"
+	}
+  ],
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total": 1
+}
 ```
-More about the [api](https://emoji-api.com/) in the Emoji API documentation.
+More about the [api](https://developer.spotify.com/documentation/web-api/) in the Spotify API documentation.
 
 ### Rate Limit
-Since the api is under development it is unknown what the exact limit is. From what I can tell it isn't much, which is why I created a fallback for.
+Spotify API has quite vage rate limits, atleast I couldn't find it in the documentation so it's unknown at the moment. I did a little research and found this [article](http://jmeyers44.github.io/blog/2015/04/26/builder-beware-the-limitations-of-popular-apis/) which basically describes what I wrote at the beginning. It is an older article but it still applies to the current situation. 
 
-For more information you can refer to the [Emoji API documentation](https://emoji-api.com/).
+For more information you can refer to the [Spotify API documentation](https://developer.spotify.com/documentation/web-api/).
 
-## Message types
+## Message types (will update asap)
 ### Client
 - `set user` - Set your username
 - `chat message` - Send a chat message to other people in the chat
@@ -71,18 +101,17 @@ For more information you can refer to the [Emoji API documentation](https://emoj
 - `learning bot` - Send answers/translation/tips to user/client
 
 ## ToDo
-Things/features I would like to add. For more info see [project emoji](https://github.com/nlvo/real-time-web-1920/projects/1)
+Things/features I would like to add. For more info see [project spotify](https://github.com/nlvo/real-time-web-1920/projects/1)
 - [x] chat
     - [x] commands
-        - [x] hello
-        - [ ] words (dictonary/images)
-    - [ ] personal flag
-    - [ ] save language
-- [x] api
+        - [ ]  recognize '/' in order to search for songs
+    - [ ]  chats/rooms
+- [ ] api
+    - [ ]  current song playing (host)
+
 
 ## Shoutout
-- Guido for the code example/explanation to set users. And the example readme about what's expected from us.
-- Maikel for explaining how to use regex.
+
 
 ## Sources
 - [Tailwind colors](https://tailwindcss.com/)
