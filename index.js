@@ -1,32 +1,54 @@
 require('dotenv').config();
 
 const express = require('express');
+const axios = require('axios');
 const api = require('./modules/api');
 const auth = require('./routes/auth')
 const app = express();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const server = require('socket.io')(http);
 const port = process.env.PORT;
 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 app
-    .use(express.static('public'))
-    
-    .use(cors())
-    .use(cookieParser())
-    
-    .use(auth)
+	.use(express.static('public'))
+
+	.use(cors())
+	.use(cookieParser())
+
+	.use(auth)
 
 	.set('view engine', 'ejs')
 	.get('/', function (req, res) {
 		res.render('main')
-    });
+	})
+	.get('/chats', async function (req, res) {
+		const access_token = req.query.access_token;
+		const options = {
+			url: 'https://api.spotify.com/v1/me/player/currently-playing',
+			method: 'get',
+			headers: {
+				'Authorization': 'Bearer ' + access_token
+			}
+		};
 
-io.on('connection', (socket) => {
+		// use the access token to access the Spotify Web API
+		const response = await axios(options)
+		// const publicPlaylists = response.data.items.map(playlists => {
+		// 	// console.log(playlists);
+			
+		// })
+
+		console.log(response);
+
+		res.render('chat', { data: response.data })
+	});
+
+server.on('connection', (socket) => {
 	let username = 'anonymous';
-	const bot = 'robot 🤖';
+	const bot = 'Luna 🌙';
 	socket.local.emit('server local message', {
 		bot,
 		username
@@ -49,23 +71,21 @@ io.on('connection', (socket) => {
 	})
 
 	socket.on('chat', async (msg) => {
-		const flags = await api.getFlags(msg);
-		const command = await api.getCommand(msg);
+
+		// const command = await api.getCommand(msg);
 
 		socket.local.emit('user message', {
-			msg: command,
-			username: 'You',
-			flags
+			msg,
+			username: 'You'
 		})
 		socket.broadcast.emit('user message', {
-			msg: command,
-			username,
-			flags
+			msg,
+			username
 		})
 
 		socket.local.emit('learning bot', {
 			bot,
-			command
+			msg
 		})
 	});
 });

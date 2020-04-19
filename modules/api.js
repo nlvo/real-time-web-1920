@@ -50,7 +50,7 @@ async function callback(req, res) {
 	
 	console.log(response);
 	
-	res.redirect('/profile/?' +
+	res.redirect('/chats/?' +
 		querystring.stringify({
 		access_token: access_token,
 		refresh_token: refresh_token
@@ -63,7 +63,7 @@ function login(req, res) {
 	res.cookie(stateKey, state);
 
 	// your application requests authorization
-	const scope = 'user-read-private user-read-email';
+	const scope = 'user-read-private user-read-email user-read-currently-playing';
 	res.redirect('https://accounts.spotify.com/authorize?' +
 		querystring.stringify({
 			response_type: 'code',

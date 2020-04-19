@@ -2,15 +2,13 @@
 
 <h1>Live Radio</h1>
     
-<h1>Logged in as </h1>
-
+<h1>Logged in as <%= user.name %></h1>
+<img id="avatar" width="200" src="" />
 <ul>
-    <% playlists.forEach(playlist => { %>
-            <img src="<%= playlist.images.url %>" />
-            <% console.log( playlist.tracks) %>
-            <li><%= playlist.name %> tracks <%= playlist.tracks.total %></li>
-        <% }) %>
-    </ul>
-    <p><a href="/">Log in again</a></p>
+    <li>Display name <%= user.display_name %></li>
+    <li>Id <%= user.id %></li>
+</ul>
+<p><a href="/">Log in again</a></p>
 
+<a href="/playlists">playlists</a>
 <%- include ("partials/footer.ejs") %>

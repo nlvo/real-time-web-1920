@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="30px" viewBox="0 0 16 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-sound-no" transform="translate(-2.000000, -6.000000)" fill="#BEC7D0">
+            <g id="Group" transform="translate(2.837838, 5.675676)">
+                <path d="M0.567567568,20.4324324 C0.254108656,20.4324324 3.83876453e-17,20.1783238 0,19.8648649 L0,10.7837838 C-3.83876453e-17,10.4703249 0.254108656,10.2162162 0.567567568,10.2162162 L4.54054054,10.2162162 L13.777162,0.46644913 C13.9927417,0.238892792 14.3519744,0.229183799 14.5795307,0.444763488 C14.6926703,0.551948318 14.7567568,0.70094094 14.7567568,0.856790687 L14.7567568,29.791858 C14.7567568,30.1053169 14.5026481,30.3594255 14.1891892,30.3594255 C14.0333394,30.3594255 13.8843468,30.2953391 13.777162,30.1821995 L4.54054054,20.4324324 L0.567567568,20.4324324 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

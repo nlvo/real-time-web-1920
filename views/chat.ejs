@@ -1,0 +1,32 @@
+<%- include ("partials/head.ejs") %>
+<%- include ("partials/header.ejs") %>
+
+<section>
+	<ul></ul>
+	<form id="user-form" class="user">
+		<div>
+			<legend>Register</legend>
+			<label for="">
+				Choose a username
+				<input type="text" id="username">
+			</label>
+			<button form="user-form">Send</button>
+		</div>
+	</form>
+</section>
+
+<section class="message-container">
+	<%- include ("partials/player") %>
+	<form id="message-form">
+		<div>
+			<legend>Chat</legend>
+			<label for="">
+				<span>Write a message</span>
+				<input type="text" id="message" placeholder="Type a message or ‘/‘ for commands" required>
+				<span class="command"><img src="/img/flag-outline.svg" alt="flag icon"></span>
+			</label>
+			<button form="message-form">Send</button>
+		</div>
+	</form>
+</section>
+<%- include ("partials/footer.ejs") %>

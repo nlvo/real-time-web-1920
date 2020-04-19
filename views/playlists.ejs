@@ -1,0 +1,13 @@
+<%- include ("partials/head.ejs") %>
+
+<h1>Live Radio</h1>
+<ul>
+    <% playlists.forEach(playlist => { %>
+            <img src="<%= playlist.images.url %>" />
+            <% console.log( playlist.id) %>
+            <li><a href="/playlists/<%= playlist.id %>"><%= playlist.name %> tracks <%= playlist.tracks.total %></a></li>
+        <% }) %>
+    </ul>
+    <p><a href="/">Log in again</a></p>
+
+<%- include ("partials/footer.ejs") %>
