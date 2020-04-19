@@ -34,12 +34,7 @@ app
 			}
 		};
 
-		// use the access token to access the Spotify Web API
 		const response = await axios(options)
-		// const publicPlaylists = response.data.items.map(playlists => {
-		// 	// console.log(playlists);
-			
-		// })
 
 		console.log(response);
 

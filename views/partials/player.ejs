@@ -1,11 +1,13 @@
-<div class="player">
-	<% console.log(data.item)%>
-	<% data.item.album.images.forEach(a => {%>
-		<% if (a.height == 64) { %>
-		<img src="<%= a.url %>" alt="">
-		<% } %>
-	<% }) %>
+<% if (data) { %>
+    <div class="player">
+        <% console.log(data.item)%>
+        <% data.item.album.images.forEach(a => {%>
+            <% if (a.height == 64) { %>
+            <img src="<%= a.url %>" alt="">
+            <% } %>
+        <% }) %>
 
-	<h3><a href="<%= data.context ? data.context.external_urls.spotify : data.item.external_urls.spotify %>" target="_blank"><%= data.item.name %> <%= data.item.artists ? '- ' + data.item.artists[0].name : '' %></a></h3>
-    <img src="/img/<%= data.is_playing ? 'playing' : 'not-playing' %>.svg" >
-</div>
+        <h3><a href="<%= data.context ? data.context.external_urls.spotify : data.item.external_urls.spotify %>" target="_blank"><%= data.item.name %> <%= data.item.artists ? '- ' + data.item.artists[0].name : '' %></a></h3>
+        <img src="/img/<%= data.is_playing ? 'playing' : 'not-playing' %>.svg" >
+    </div>
+<% } %>
