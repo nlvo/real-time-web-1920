@@ -37,51 +37,31 @@ The spotify API uses OAUTH. In order for you to use the Spotify API you'll need 
 The Emoji API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the playlist endpoint.
 
 ### Playlist
-This is an example endpoint get a list of the current user's playlists
+This is an example endpoint get a list of the user's current playing song
 
-`/v1/me/playlists`
+`/v1/me/player/currently-playing`
 
 #### Data example
 ```
 {
-  "href": "https://api.spotify.com/v1/users/username/playlists?offset=0&limit=20",
-  "items": [
-	{
-	  "collaborative": false,
-	  "description": "",
-	  "external_urls": {
-		"spotify": "https://open.spotify.com/playlist/id"
-	  },
-	  "href": "https://api.spotify.com/v1/playlists/id",
-	  "id": "playlist_id",
-	  "images": [],
-	  "name": "radio",
-	  "owner": {
-		"display_name": "username",
-		"external_urls": {
-		  "spotify": "https://open.spotify.com/user/user_id"
-		},
-		"href": "https://api.spotify.com/v1/users/user_id",
-		"id": "user_id",
-		"type": "user",
-		"uri": "spotify:user:user_id"
-	  },
-	  "primary_color": null,
-	  "public": true,
-	  "snapshot_id": "snapshot_id",
-	  "tracks": {
-		"href": "https://api.spotify.com/v1/playlists/id/tracks",
-		"total": 0
-	  },
-	  "type": "playlist",
-	  "uri": "spotify:playlist:id"
-	}
-  ],
-  "limit": 20,
-  "next": null,
-  "offset": 0,
-  "previous": null,
-  "total": 1
+  "timestamp": 1587307658716,
+  "context": {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/playlist/playlist_id"
+    },
+    "href": "https://api.spotify.com/v1/playlists/playlist_id",
+    "type": "playlist",
+    "uri": "spotify:user:user_id:playlist:playlist_id"
+  },
+  "progress_ms": 71614,
+  "item": {}
+  "currently_playing_type": "track",
+  "actions": {
+    "disallows": {
+      "resuming": true
+    }
+  },
+  "is_playing": true
 }
 ```
 More about the [api](https://developer.spotify.com/documentation/web-api/) in the Spotify API documentation.
