@@ -34,9 +34,9 @@ The spotify API uses OAUTH. In order for you to use the Spotify API you'll need 
 - Client Secret
 - Redirect uri
 
-The Emoji API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the playlist endpoint.
+The Spotify API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the player endpoint.
 
-### Playlist
+### Player
 This is an example endpoint get a list of the user's current playing song
 
 `/v1/me/player/currently-playing`
@@ -70,6 +70,9 @@ More about the [api](https://developer.spotify.com/documentation/web-api/) in th
 Spotify API has quite vage rate limits, atleast I couldn't find it in the documentation so it's unknown at the moment. I did a little research and found this [article](http://jmeyers44.github.io/blog/2015/04/26/builder-beware-the-limitations-of-popular-apis/) which basically describes what I wrote at the beginning. It is an older article but it still applies to the current situation. 
 
 For more information you can refer to the [Spotify API documentation](https://developer.spotify.com/documentation/web-api/).
+
+## Data life cycle
+![data-life-cycle](https://user-images.githubusercontent.com/8554238/79737066-0e81a100-82fb-11ea-9fa3-424ed0d6d811.png)
 
 ## Message types (will update asap)
 ### Client
