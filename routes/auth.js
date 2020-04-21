@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const express = require('express');
 const app = express();
-const api = require('../modules/api.js')
+const api = require('../modules/auth.js')
 
 const client_id = process.env.CLIENT_ID; // Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
@@ -42,71 +42,68 @@ app
 		});
 	})
 	.get('/callback', api.callback)
-	.get('/login', api.login)
-	.get('/profile', async function (req, res) {
-		var access_token = req.query.access_token;
-		var options = {
-			url: 'https://api.spotify.com/v1/me',
-			method: 'get',
-			headers: {
-				'Authorization': 'Bearer ' + access_token
-			}
-		};
+	.get('/login', api.login);
+	// .get('/profile', async function (req, res) {
+	// 	var access_token = req.query.access_token;
+	// 	var options = {
+	// 		url: 'https://api.spotify.com/v1/me',
+	// 		method: 'get',
+	// 		headers: {
+	// 			'Authorization': 'Bearer ' + access_token
+	// 		}
+	// 	};
 
-		// use the access token to access the Spotify Web API
-		const response = await axios(options)
-		console.log(response.data);
-		console.log('hallo', req.query);
-
-		res.render('account', {
-			user: response.data
-		})
-	})
-	.get('/playlists', async function (req, res) {
-		console.log(req);
+	// 	// use the access token to access the Spotify Web API
+	// 	const response = await axios(options)
+	// 	res.render('account', {
+	// 		user: response.data
+	// 	})
+	// })
+	// .get('/playlists', async function (req, res) {
+	// 	console.log(req);
 		
-		var access_token = req.query.access_token;
-		var options = {
-			url: 'https://api.spotify.com/v1/me/playlists',
-			method: 'get',
-			headers: {
-				'Authorization': 'Bearer ' + access_token
-			}
-		};
+	// 	var access_token = req.query.access_token;
+	// 	var options = {
+	// 		url: 'https://api.spotify.com/v1/me/playlists',
+	// 		method: 'get',
+	// 		headers: {
+	// 			'Authorization': 'Bearer ' + access_token
+	// 		}
+	// 	};
 
-		// use the access token to access the Spotify Web API
-		const response = await axios(options)
-		const publicPlaylists = response.data.items.map(playlists => {
-			if (playlists.public) {
-				return playlists
-			}
-		})
-		console.log(publicPlaylists);
-		console.log('hi', req.query);
+	// 	// use the access token to access the Spotify Web API
+	// 	const response = await axios(options)
+	// 	const publicPlaylists = response.data.items.map(playlists => {
+	// 		if (playlists.public) {
+	// 			return playlists
+	// 		}
+	// 	})
+	// 	console.log(publicPlaylists);
+	// 	console.log('hi', req.query);
 
-		res.render('playlists', {
-			playlists: publicPlaylists
-		})
-	})
-	.get('/playlist', async function (req, res) {
-		console.log(req)
+	// 	res.render('playlists', {
+	// 		playlists: publicPlaylists
+	// 	})
+	// })
+	// .get('/playlist', async function (req, res) {
+	// 	console.log(req)
 
-		var access_token = req.query.access_token;
-		var options = {
-			url: 'https://api.spotify.com/v1/me/playlists',
-			method: 'get',
-			headers: {
-				'Authorization': 'Bearer ' + access_token
-			}
-		};
+	// 	var access_token = req.query.access_token;
+	// 	var options = {
+	// 		url: 'https://api.spotify.com/v1/me/playlists',
+	// 		method: 'get',
+	// 		headers: {
+	// 			'Authorization': 'Bearer ' + access_token
+	// 		}
+	// 	};
 
-		// use the access token to access the Spotify Web API
-		const response = await axios(options)
-		const publicPlaylists = response.data.items.map(playlists => {
-			if (playlists.public) {
-				return playlists
-			}
-		})
-	});
+	// 	// use the access token to access the Spotify Web API
+	// 	const response = await axios(options)
+	// 	const publicPlaylists = response.data.items.map(playlists => {
+	// 		if (playlists.public) {
+	// 			return playlists
+	// 		}
+	// 	})
+	// });
 
 module.exports = app;

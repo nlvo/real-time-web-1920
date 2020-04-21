@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const express = require('express');
-const axios = require('axios');
 const api = require('./modules/api');
 const auth = require('./routes/auth')
 const app = express();
@@ -25,21 +24,28 @@ app
 		res.render('main')
 	})
 	.get('/chats', async function (req, res) {
-		const access_token = req.query.access_token;
-		const options = {
-			url: 'https://api.spotify.com/v1/me/player/currently-playing',
-			method: 'get',
-			headers: {
-				'Authorization': 'Bearer ' + access_token
-			}
-		};
 
-		const response = await axios(options)
-
-		console.log(response);
-
-		res.render('chat', { data: response.data })
+		let song = await api(req,res);
+		console.log(song);
+		
+		server.on('connection', (socket) => {
+				setInterval( async function () {
+					const newSong = await api(req,res);
+					if (song.item.id !== newSong.item.id) {
+						song = newSong
+						socket.emit('music player', {
+							song
+						});
+					}
+				}, 5000)
+			socket.emit('music player', {
+				song
+			});
+		}); 
+		res.render('chat')
 	});
+
+
 
 server.on('connection', (socket) => {
 	let username = 'anonymous';
@@ -65,9 +71,14 @@ server.on('connection', (socket) => {
 		});
 	})
 
+	socket.on('disconnect', function() {
+		server.emit('server message', `${username} left`)
+	})
+
 	socket.on('chat', async (msg) => {
 
 		// const command = await api.getCommand(msg);
+		// const command = await api(req,res);
 
 		socket.local.emit('user message', {
 			msg,

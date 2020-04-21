@@ -128,3 +128,25 @@ socket.on('user message', (user) => {
 	li.append(span, `${message}`);
 	messageList.append(li);
 });
+
+socket.on('music player', (playing) => {
+	
+	// const currentSong = playing.song;
+	console.log(playing.song);
+	const tbn = document.querySelector('.player__tbn');
+	const playingIcon = document.querySelector('.player__is-playing');
+	const link = document.querySelector('h3 a');
+	const songLink = playing.song.context ? playing.song.context.external_urls.spotify : playing.song.item.external_urls.spotify;
+	const songTitle = playing.song.item.name;
+	const songArtist = playing.song.item.artists ? `- ${playing.song.item.artists[0].name}` : '';
+	const isPlaying = playing.song.is_playing ? 'playing' : 'not-playing'
+	playing.song.item.album.images.forEach(a => {
+		if (a.height == 64) {
+			tbn.src = a.url;
+		}
+	})
+	link.textContent = `${songTitle} ${songArtist}`;
+	link.href = songLink;
+	playingIcon.src = `/img/${isPlaying}.svg`;
+})
+
