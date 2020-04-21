@@ -72,7 +72,7 @@ Spotify API has quite vage rate limits, atleast I couldn't find it in the docume
 For more information you can refer to the [Spotify API documentation](https://developer.spotify.com/documentation/web-api/).
 
 ## Data life cycle
-![data-life-cycle](https://user-images.githubusercontent.com/8554238/79737066-0e81a100-82fb-11ea-9fa3-424ed0d6d811.png)
+![data-life-cycle-2](https://user-images.githubusercontent.com/8554238/79840078-b3f94b00-83b5-11ea-8bb7-f9bf324b2f63.png)
 
 ## Message types (will update asap)
 ### Client
