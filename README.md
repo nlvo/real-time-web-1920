@@ -74,14 +74,14 @@ For more information you can refer to the [Spotify API documentation](https://de
 ## Data life cycle
 ![data-life-cycle-2](https://user-images.githubusercontent.com/8554238/79840078-b3f94b00-83b5-11ea-8bb7-f9bf324b2f63.png)
 
-## Message types (will update asap)
+## Message types
 ### Client
 - `set user` - Set your username
 - `chat message` - Send a chat message to other people in the chat
 
 ### Server
 - `server message` - Send a server notification to clients
-- `learning bot` - Send answers/translation/tips to user/client
+- `music player` - Send host's current song to clients
 
 ## ToDo
 Things/features I would like to add. For more info see [project spotify](https://github.com/nlvo/real-time-web-1920/projects/1)
