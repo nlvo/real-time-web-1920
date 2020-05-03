@@ -1,5 +1,5 @@
 # Real time web application with the Spotify API
-A chat app where you can listen to songs with others. Users could request a song.
+Stay close while still apart with Radio Luna. Listen to music from home with friends and familly. Or suggest a nice song to listen to, together.
 
 ## Concept design
 ![concept-luna](https://user-images.githubusercontent.com/8554238/79564611-498f9480-80af-11ea-9426-247e531a5f44.png)
