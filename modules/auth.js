@@ -39,20 +39,22 @@ async function callback(req, res) {
       headers: {
         'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
       }
-    };
+	};
+	
 	const response = await axios(authOptions)
-			.catch (error => {
-				console.log(error);
-			});
+		.catch (error => {
+			console.log(error);
+		});
 
 	const access_token = response.data.access_token;
 	const refresh_token = response.data.refresh_token;
-		
-	res.redirect('/chats/?' +
-		querystring.stringify({
-		access_token: access_token,
-		refresh_token: refresh_token
-	}));
+	
+	const roomId = generateRandomString(6)
+	
+	res.cookie('access_token', access_token);
+	res.cookie('refresh_token', refresh_token);
+
+	res.redirect(`/chats/${roomId}`);
   }
 }
 
