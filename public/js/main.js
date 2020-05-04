@@ -1,10 +1,14 @@
 const socket = io();
 const form = document.querySelector('#message-form');
 const formUser = document.querySelector('#user-form');
+const formSearch = document.querySelector('#search-form');
+const searchInput = document.querySelector('#search-form input');
 const message = document.querySelector('#message');
 const username = document.querySelector('#username');
 const chatsList = document.querySelector('.chats');
-const messageList = document.querySelector('section ul');
+const messageList = document.querySelector('.chat ul');
+const songLists = document.querySelector('.search ul');
+const playlist = document.querySelector('.playlist ul');
 
 // const commandList = document.querySelector('.commands');
 // const command = document.querySelector('.command');
@@ -22,6 +26,13 @@ if(formUser) {
 		event.preventDefault();
 		socket.emit('set user', username.value)
 		this.style.opacity = '0';
+	});
+}
+
+if(formSearch) {
+	formSearch.addEventListener('submit', function (event) {
+		event.preventDefault();		
+		socket.emit('search songs', {value: searchInput.value, roomId})
 	});
 }
 
@@ -83,54 +94,12 @@ socket.on('server user message', (server) => {
 	// messageList.append(li);
 });
 
-// socket.on('learning bot', (chat) => {
-// 	console.log('learning bot: ', chat)
-// 	const li = document.createElement('li');
-// 	const span = document.createElement('span');
-// 	const spana = document.createElement('span');
-// 	const spanTip = document.createElement('span');
+socket.on('music player', (playing) => {
 
-// 	if(chat.command.language) {
-// 		span.append(`🧠 Learning`)
-// 		spana.append(`Roman: ${chat.command.string}`)
-// 		li.append(span, `${chat.command.language}: ${chat.command.specialCharacters}`, spana)	
-// 	} else if (chat.command.country.length > 0){
-// 		span.append(`Robot ${chat.command.flag}`)
-// 		// li.append(span, `Means Hello in: ${chat.command[0]}.`)	
-// 		li.append(span, `Hi to ${chat.command.country}.`)
-// 	} else {
-// 		spanTip.append(`🚨Tip`)
-// 		li.append(spanTip, `Want to learn a new language? use the command /hellokorean`)
-// 		li.classList.add('learn');
-// 	}
-
-// 	messageList.append(li);
-// });
-
-// chats.on('your message', (user) => {
-// 	console.log(user);
-// 	const li = document.createElement('li');
-// 	const span = document.createElement('span');
-// 	// const flags = user.flags;
-
-// 	const message = user.msg;
-// 	const username = user.username;
-
-// 	li.classList.add('me');	
-// 	span.append(`${username}`)
-// 	li.append(span, `${message}`);
-
-// 	messageList.append(li);
-
-// });
-const chats = io('/chats');
-
-chats.on('music player', (playing) => {
-	
 	// const currentSong = playing.song;
-	console.log(playing.song);
-	console.log(playing);
-	console.log(Object.keys(playing).length);
+	// console.log(playing.song);
+	// console.log(playing);
+	// console.log(Object.keys(playing).length);
 	if(Object.keys(playing).length !== 0 && playing.song !== 'not playing') {
 		const tbn = document.querySelector('.player__tbn');
 		const playingIcon = document.querySelector('.player__is-playing');
@@ -150,12 +119,11 @@ chats.on('music player', (playing) => {
 	}
 })
 
-const roomId = `/chats#${location.pathname.split('/')[2]}`;
-chats.emit('room', roomId)
+const roomId = `${location.pathname.split('/')[2]}`;
+socket.emit('room', roomId)
 
-chats.on('join room', (server) => {
+socket.on('join room', (server) => {
 	console.log('Connected to room', server);
-
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const username = document.createElement('span');
@@ -166,7 +134,7 @@ chats.on('join room', (server) => {
 	messageList.append(li);
 });
 
-chats.on('rooms', (rooms) =>{
+socket.on('rooms', (rooms) =>{
 	const chatRooms = Object.entries(rooms);
 	// https://zellwk.com/blog/looping-through-js-objects/
 	chatRooms.forEach(chat => {
@@ -185,18 +153,24 @@ chats.on('rooms', (rooms) =>{
 	console.log(chatRooms);
 })
 
-chats.on('user message', (user) => {
+socket.on('user message', (user) => {
 	console.log(user);
+
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	// const flags = user.flags;
 	// alert(user)
 	const message = user.msg;
 	const username = user.username;
-	
+	const song = user.song;
+
 	// alert(message)
 	if(username == 'You') {
 		li.classList.add('me');	
+	}
+
+	if(song) {
+		li.classList.add(song);		
 	}
 
 	span.append(`${username}`)
@@ -206,6 +180,33 @@ chats.on('user message', (user) => {
 
 });
 
+socket.on('user request', (song) => {
+	console.log(song);
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const link = document.createElement('a');
+
+	const username = song.username;
+	const songName = song.name;
+	const songId = song.id;
+
+	// alert(message)
+	if(username == 'You') {
+		li.classList.add('me');	
+	}
+console.log('fu', song);
+
+	if(songName) {
+		link.classList.add(songId);		
+		link.textContent = 'add to playlist';
+	}
+
+	span.append(`${username}`)
+	li.append(span, `${songName}`, link);
+
+	messageList.append(li);
+})
+
 if(form) {
 	form.addEventListener('submit', function (event) {
 		
@@ -213,9 +214,94 @@ if(form) {
 
 		const roomId = `/chats#${location.pathname.split('/')[2]}`
 		
-		chats.emit('chat', { roomId, message: message.value })
+		socket.emit('chat', { roomId, message: message.value })
 		formUser.style.display = 'none';
 		// commandList.classList.remove('active');
 		message.value = '';
 	});
 }
+
+socket.on('song lists', (lists) => {
+	alert(lists.songs);
+	if(songLists.childNodes.length > 0){
+		while(songLists.firstChild) {
+			songLists.removeChild(songLists.firstChild);
+			// https://stackoverflow.com/questions/48310643/removing-childnodes-using-node-childnodes-foreach
+		}
+	}
+	lists.songs.forEach(songs => {
+		const tbn = document.createElement('img');
+		const li = document.createElement('li');
+		const span = document.createElement('span');
+		li.classList.add(songs.id)
+		console.log(songs.name);
+		songs.artists.forEach(artist => {
+			span.append(artist.name)
+		})
+
+		songs.album.images.forEach(a => {
+			
+			if (a.height == 64) {
+				tbn.src = a.url;
+			}
+		})
+
+		li.append(tbn, songs.name, ' - ' ,span)
+		songLists.append(li);
+	})
+})
+
+socket.on('song requests added', (requests) => {
+	console.log('rrrr',requests);
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+
+	const songId = requests.song.id;
+	console.log(songId);
+	li.append(span, `${songName}`, link);
+
+	messageList.append(li);
+})
+
+songLists.addEventListener('click', function(event){
+	const songId = event.target.classList.value;
+	const songName = event.target.textContent;
+	const searchResults = event.target.parentElement
+
+	if(searchResults.childNodes.length > 0){
+		while(searchResults.firstChild) {
+			searchResults.removeChild(searchResults.firstChild);
+		}
+	}
+
+	socket.emit('song request', { roomId, message: songName, song: songId })
+})
+
+messageList.addEventListener('click', function(event){
+	const songId = event.target.classList.value;
+
+	socket.emit('add to radio', { roomId, songId })
+	console.log('aiijia', songId);
+	
+})
+
+socket.on('radio playlist', (songs) => {
+	console.log('song nammiy', songs.song.name);
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const tbn = document.createElement('img');
+
+		songs.song.album.images.forEach(a => {
+			
+			if (a.height == 64) {
+				tbn.src = a.url;
+			}
+		})
+	const songName = songs.song.name;
+	songs.song.artists.forEach(artist => {
+		span.append(artist.name)
+	})
+
+	li.append(tbn, `${songName} - `, span)
+	playlist.append(li);
+})

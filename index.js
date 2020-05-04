@@ -5,13 +5,14 @@ const api = require('./modules/api');
 const auth = require('./routes/auth')
 const app = express();
 const http = require('http').createServer(app);
-const server = require('socket.io')(http);
+const io = require('socket.io')(http);
 const port = process.env.PORT;
+const cookie = require('cookie');
 
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-const rooms = server.of('/chats');
+// const rooms = io.of('/chats');
 
 app
 	.use(express.static('public'))
@@ -20,7 +21,7 @@ app
 	.use(cookieParser())
 
 	.use(auth)
-	.set('server', server)
+	.set('io', io)
 	.set('view engine', 'ejs')
 	.get('/', function (req, res) {
 		res.render('main')
@@ -29,43 +30,42 @@ app
 		res.render('chats')
 	})
 	.get('/chats/:id', async function (req, res) {
-		console.log();
+
 		const roomId = req.params.id;
 		// console.log(req.cookies);
 		// console.log(req.params.id);
-		// const roomId = server.of(`/chats/${req.params.id}`);
-		// room.emit('user message', 'ee')
+		// const roomId = io.of(`/chats/${req.params.id}`);
 
 		// console.log(res.io);
-		// console.log(req);
 		
-		// let song = await api(req,res);
-		// console.log(song.item);
+		let song = await api.currentPlaying(req,res);
+		// console.log(song.item);	
 		
-		// rooms.on('connection', (socket) => {
-		// 	setInterval( async function () {
-		// 		try {
-		// 			const newSong = await api(req,res);
-					
-		// 			if (song && song.item.id !== newSong.item.id) {
-		// 				song = newSong
+		io.on('search songs', (input) => {
+			console.log('songi?',input);		
+		})
+		
+		setInterval( async function () {
+			try {
+				const newSong = await api.currentPlaying(req,res);
+				
+				if (song && song.item.id !== newSong.item.id) {
+					song = newSong
 
-		// 				rooms.emit('music player', {
-		// 					song
-		// 				});
-		// 			} else {
-		// 				rooms.emit('music player', {
-		// 					song: 'not playing'
-		// 				});
-		// 			}
-		// 		} catch(error){
-		// 			console.log(error, 'no song');
-		// 		}
-		// 	}, 5000)
-		// rooms.emit('music player', {
-		// 	song
-		// });		
-		// }); 
+					io.emit('music player', {
+						song
+					});
+				} else {
+					// console.log(roomId);
+
+					io.emit('music player', {
+						song
+					});
+				}
+			} catch(error){
+				console.log(error, 'no song');
+			}
+		}, 1000)
 
 		res.render('chat', { roomId })
 	})
@@ -73,7 +73,7 @@ app
 		res.redirect('/chats/' + req.query.code)
 	});
 
-	rooms.on('connection', (socket) => {
+	io.on('connection', (socket) => {
 		const rooms = socket.adapter.rooms;
 		let username = 'anonymous';
 		const bot = 'Luna 🌙';
@@ -90,19 +90,78 @@ app
 		});
 
 		socket.on('room', (roomId) => {
+			console.log('roomie?',roomId);
+
 			socket.join(roomId);
 			socket.to(roomId).emit('join room', {
 				bot,
+				username
+			})
+			
+		})
+		socket.on('search songs', async (input) => {
+			console.log('song?',input);
+			socket.cookie = socket.handshake.headers.cookie || socket.request.headers.cookie
+			const socketCookie = cookie.parse(socket.cookie);
+			const access_token = socketCookie.access_token;
+			console.log('cookie', access_token);
+
+			const songs = await api.getSongs(socketCookie, input.value);
+			console.log('wooah?', songs);
+			
+			// socket.join(roomId);
+			socket.local.emit('song lists', {
+				songs
+			})
+			console.log(input.roomId);
+			
+			// socket.in(input.roomId).emit('song lists', {
+			// 	songs
+			// })
+		
+		})
+
+		socket.on('add to radio', async (song) => {
+			console.log('songIddddd', song.songId);
+			socket.cookie = socket.handshake.headers.cookie || socket.request.headers.cookie
+			const socketCookie = cookie.parse(socket.cookie);
+			const access_token = socketCookie.access_token;
+			console.log('cookie', access_token);
+
+			const songRequest = await api.addToQueu(socketCookie, song.songId);
+			console.log(songRequest, ' added');
+			
+			const songInfo = await api.getOneSong(socketCookie, song.songId);
+			socket.local.emit('song requests added', {
+				song: songInfo
+			})
+			
+			socket.emit('radio playlist', {
+				song: songInfo
+			})
+		})
+
+		socket.on('song request', (song) => {
+			console.log(song);
+			
+			// song request emits
+			socket.local.emit('user request', {
+				name: song.message,
+				id: song.song,
+				username
+			})
+			
+			socket.to(song.roomId).emit('user request', {
+				name: song.message,
+				id: song.song,
 				username
 			})
 		})
 
 		socket.on('chat', (msg) => {
 			console.log('id?',msg);
-			
-			// const command = await api.getCommand(msg);
-			// const command = await api(req,res);
-	
+
+			// user chat messages
 			socket.local.emit('user message', {
 				msg: msg.message,
 				username: 'You'

@@ -1,36 +1,53 @@
 <%- include ("partials/head.ejs") %>
-<%- include ("partials/header.ejs") %>
-
-<section>
-	<ul></ul>
-	<form id="user-form" class="user">
-		<div>
-			<legend>Register</legend>
+<section class="search">
+	<div class="bar">
+		<form id="search-form">
 			<label for="">
-				Choose a username
-				<input type="text" id="username">
+				Search
+				<input type="search" name="q">
 			</label>
-			<button form="user-form">Send</button>
-		</div>
-	</form>
-</section>
-
-<section class="message-container">
-	<div class="player">
-        <img class="player__tbn" src="" alt="">
-		<h3><a href=""></a></h3>
-		<img class="player__is-playing" src="" alt="">
+			<button form="search-form">Search</button>
+		</form>
+		<ul></ul>
 	</div>
-	<form id="message-form">
-		<div>
-			<legend>Chat</legend>
-			<label for="">
-				<span>Write a message</span>
-				<input type="text" id="message" placeholder="Type a message or ‘/‘ for commands" required>
-				<span class="command"><img src="/img/flag-outline.svg" alt="flag icon"></span>
-			</label>
-			<button form="message-form">Send</button>
-		</div>
-	</form>
+	<div class="playlist">
+		<ul></ul>
+	</div>
 </section>
+
+<div class="container">
+	<%- include ("partials/header.ejs") %>
+	<section class="chat">
+		<ul></ul>
+		<form id="user-form" class="user">
+			<div>
+				<legend>Register</legend>
+				<label for="">
+					Choose a username
+					<input type="text" id="username">
+				</label>
+				<button form="user-form">Send</button>
+			</div>
+		</form>
+	</section>
+
+	<section class="message-container">
+		<div class="player">
+			<img class="player__tbn" src="" alt="">
+			<h3><a href=""></a></h3>
+			<img class="player__is-playing" src="" alt="">
+		</div>
+		<form id="message-form">
+			<div>
+				<legend>Chat</legend>
+				<label for="">
+					<span>Write a message</span>
+					<input type="text" id="message" placeholder="Type a message or ‘/‘ for commands" required>
+					<span class="command"><img src="/img/flag-outline.svg" alt="flag icon"></span>
+				</label>
+				<button form="message-form">Send</button>
+			</div>
+		</form>
+	</section>
+</div>
 <%- include ("partials/footer.ejs") %>

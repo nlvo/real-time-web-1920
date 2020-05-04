@@ -48,7 +48,7 @@ async function callback(req, res) {
 
 	const access_token = response.data.access_token;
 	const refresh_token = response.data.refresh_token;
-	
+
 	const roomId = generateRandomString(6)
 	
 	res.cookie('access_token', access_token);
@@ -63,7 +63,7 @@ function login(req, res) {
 	res.cookie(stateKey, state);
 
 	// your application requests authorization
-	const scope = 'user-read-private user-read-email user-read-currently-playing';
+	const scope = 'user-read-private user-read-email user-read-currently-playing  playlist-modify-public playlist-modify-private';
 	res.redirect('https://accounts.spotify.com/authorize?' +
 		querystring.stringify({
 			response_type: 'code',

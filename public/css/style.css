@@ -13,17 +13,24 @@
     --vanilla-900: #4D3E28;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--steel-900);
     color: var(--steel-200);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1em;
     margin: 0;
+    border: 0;
 }
 
 header {
     background-color: var(--steel-700);
     padding: 1em;
+    position: absolute;
+    width: 100%;
 }
 
 header ul li {
@@ -77,15 +84,65 @@ button {
 
 main {
     position: relative;
+    display: flex;
+    height: 100vh;
+    margin: 0;
 }
 
-main section {
+main .container {
+    flex: 3;
+    position: relative;
+}
+
+main .chat {
     padding: 1em;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
-section ul {
+.search {
+    background-color: var(--steel-800);
+    border-right: 1px solid var(--steel-600);
+    flex: 1;
+    z-index: 1;
+    overflow-x: scroll;
+    position: relative;
+    /* width: 25%; */
+}
+
+.search .bar {
+    background-color: var(--steel-600);
+    position: fixed;
+    width: 25%;
+    top: 3em;
+    left: 0;
+}
+
+.search .bar ul {
+    flex-direction: column;
+    margin-top: .5em;
+}
+
+.search .bar ul li{
+    padding: .5em 1em;
+    border-bottom: 1px solid var(--steel-700);
+}
+
+.search .bar form {
+    background-color: var(--steel-700);
+    padding: 1em;
+    position: fixed;
+    width: 25%;
+    top: 0;
+    left: 0;
+}
+
+.playlist {
+    margin-top: 4em;
+}
+
+.chat ul {
     flex-direction: column;
     align-items: flex-start;
 }
@@ -94,7 +151,7 @@ section ul {
     Chat | messages
  * -------------------------------------------------------- */
 
-section ul li {
+.chat ul li {
     background-color: var(--steel-500);
     border-radius: .625em;
     padding: .625em 1em;
@@ -103,41 +160,41 @@ section ul li {
     transition: 1s all ease-in-out;
 }
 
-section ul li span:last-of-type {
+.chat ul li span:last-of-type {
     color: var(--teal-800);
     font-style: italic;
     display: inline-block;
 }
 
-section ul li span,
-section ul li span:first-of-type {
+.chat ul li span,
+.chat ul li span:first-of-type {
     color: var(--steel-700);
     font-style: normal;
     text-transform: lowercase;
     display: block;
 }
 
-section ul li.server {
+.chat ul li.server {
     background-color: var(--steel-500);
     align-self: flex-end;
 }
 
-section ul li.learn {
+.chat ul li.learn {
     background-color: var(--yellow-300);
     color: var(--yellow-900);
 }
 
-section ul li.learn span {
+.chat ul li.learn span {
     color: var(--yellow-800);
 }
 
-section ul li.me {
+.chat ul li.me {
     align-self: flex-end;
     background-color: var(--vanilla-500);
     color: var(--vanilla-900);
 }
 
-section ul li.me span {
+.chat ul li.me span {
     color: var(--teal-800);
     display: block;
 }
@@ -147,13 +204,13 @@ section ul li.me span {
  * -------------------------------------------------------- */
 
 .message-container {
+    flex: 3;
     padding: 0;
     background-color: var(--steel-700);
     position: fixed;
     bottom: 0;
-    left: 0;
     right: 0;
-    width: 100%;
+    width: 75%;
 }
 
 /* --------------------------------------------------------
