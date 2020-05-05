@@ -34,10 +34,14 @@ The spotify API uses OAUTH. In order for you to use the Spotify API you'll need 
 - Client Secret
 - Redirect uri
 
-The Spotify API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the player endpoint.
+The Spotify API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the player, track and search endpoint.
+
+- `/v1/search`
+- `/v1/me/player/currently-playing`
+- `/v1/tracks/{id}`
 
 ### Player
-This is an example endpoint get a list of the user's current playing song
+This is an example endpoint to get a list of the user's current playing song
 
 `/v1/me/player/currently-playing`
 
