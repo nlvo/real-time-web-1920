@@ -75,26 +75,47 @@ For more information you can refer to the [Spotify API documentation](https://de
 ![data-life-cycle-2](https://user-images.githubusercontent.com/8554238/79840078-b3f94b00-83b5-11ea-8bb7-f9bf324b2f63.png)
 
 ## Message types
-### Client
+### Client to server
 - `set user` - Set your username
-- `chat message` - Send a chat message to other people in the chat
+- `chat message` - Send a _chat message_ to other people in the chat
+- `song request` - Send a _song request_ to other people in the chat
+- `search songs` - Send a search request
+- `add to radio` - Send _song_ that is added to the radio to other people in the chat
 
-### Server
+### Server to client
 - `server message` - Send a server notification to clients
-- `music player` - Send host's current song to clients
+- `join room` - Send a server notification to clients that someone joined
+
+- `user message` - Send a chat message to other people in the chat
+
+- `music player` - Send host current playing song to clients
+- `user request` - Send a chat message to other people in the chat
+- `song lists` - Send search results to client
+
 
 ## ToDo
 Things/features I would like to add. For more info see [project spotify](https://github.com/nlvo/real-time-web-1920/projects/1)
 - [x] chat
     - [x] commands
         - [ ]  recognize '/' in order to search for songs
-    - [ ]  chats/rooms
+    - [x]  chats/rooms (semi)
+    - [ ]  roles
+      - [ ] host
+      - [ ] users
 - [ ] api
-    - [ ]  current song playing (host)
+    - [x]  current song playing
+    - [x]  add song to playlist
+    - [x]  request a song
+    - [x]  search for songs
+    - [ ]  play songs
 
+## Known bug/not completely working features
+- When adding song to playlist, it will be added to an already chosen one.
+- Currently playing only works when 'host' is playing song
 
 ## Shoutout
-
+Guido for the code example/explanation to set users. And the example readme about what's expected from us.
+Kris for the login example in slack group
 
 ## Sources
 - [Tailwind colors](https://tailwindcss.com/)
