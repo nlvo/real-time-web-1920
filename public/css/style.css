@@ -29,8 +29,9 @@ body {
 header {
     background-color: var(--steel-700);
     padding: 1em;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 75%;
+    right: 0;
 }
 
 header ul li {
@@ -98,7 +99,8 @@ main .chat {
     padding: 1em;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    width: 75%;
+    margin-left: auto;
 }
 
 .search {
@@ -108,15 +110,18 @@ main .chat {
     z-index: 1;
     overflow-x: scroll;
     position: relative;
-    /* width: 25%; */
+    position: fixed;
+    width: 25%;
+    height: 100%;
 }
 
 .search .bar {
-    background-color: var(--steel-600);
+    background-color: var(--steel-700);
     position: fixed;
     width: 25%;
     top: 3em;
-    left: 0;
+    left: 4em;
+    transition: all 1s ease;
 }
 
 .search .bar ul {
@@ -126,7 +131,9 @@ main .chat {
 
 .search .bar ul li{
     padding: .5em 1em;
-    border-bottom: 1px solid var(--steel-700);
+    border-top: 1px solid var(--steel-600);
+    display: flex;
+    align-items: center;
 }
 
 .search .bar form {
@@ -138,13 +145,31 @@ main .chat {
     left: 0;
 }
 
+.search .bar ul li img {
+    border-radius: .25em;
+    padding: .25em 1em .25em 0;
+}
+
 .playlist {
     margin-top: 4em;
+}
+
+.playlist ul li {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.playlist ul li img {
+    border-radius: .25em;
+    padding: .25em 1em .25em 0;
 }
 
 .chat ul {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 4em;
+    margin-bottom: 8em;
 }
 
 /* --------------------------------------------------------
@@ -179,15 +204,6 @@ main .chat {
     align-self: flex-end;
 }
 
-.chat ul li.learn {
-    background-color: var(--yellow-300);
-    color: var(--yellow-900);
-}
-
-.chat ul li.learn span {
-    color: var(--yellow-800);
-}
-
 .chat ul li.me {
     align-self: flex-end;
     background-color: var(--vanilla-500);
@@ -199,6 +215,11 @@ main .chat {
     display: block;
 }
 
+.chat ul li a {
+    cursor: pointer;
+    color: var(--vanilla-500);
+    display: block;
+}
 /* --------------------------------------------------------
     Message | bottom
  * -------------------------------------------------------- */

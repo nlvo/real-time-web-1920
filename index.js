@@ -41,10 +41,6 @@ app
 		let song = await api.currentPlaying(req,res);
 		// console.log(song.item);	
 		
-		io.on('search songs', (input) => {
-			console.log('songi?',input);		
-		})
-		
 		setInterval( async function () {
 			try {
 				const newSong = await api.currentPlaying(req,res);
@@ -84,10 +80,23 @@ app
 			bot,
 			username
 		});
+		
 		socket.broadcast.emit('server message', {
 			bot,
 			username
 		});
+
+		socket.on('set user', (name) => {
+			username = name;
+			socket.local.emit('server user message', {
+				bot,
+				username
+			});
+			socket.broadcast.emit('server user message', {
+				bot,
+				username
+			});
+		})
 
 		socket.on('room', (roomId) => {
 			console.log('roomie?',roomId);
@@ -113,12 +122,6 @@ app
 			socket.local.emit('song lists', {
 				songs
 			})
-			console.log(input.roomId);
-			
-			// socket.in(input.roomId).emit('song lists', {
-			// 	songs
-			// })
-		
 		})
 
 		socket.on('add to radio', async (song) => {
@@ -162,7 +165,7 @@ app
 			console.log('id?',msg);
 
 			// user chat messages
-			socket.local.emit('user message', {
+			socket.emit('user message', {
 				msg: msg.message,
 				username: 'You'
 			})
@@ -173,6 +176,7 @@ app
 			})
 
 		});
+
 	})
 
 // server.on('connection', (socket) => {

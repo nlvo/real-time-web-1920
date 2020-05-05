@@ -51,10 +51,12 @@ socket.on('server local message', (server) => {
 	username.append(server.username)
 	span.append(server.bot)
 	li.append(span, 'Welcome ', username, '! Log in to listen to music together, by becoming a host.');
-	// messageList.append(li);
+	messageList.append(li);
 });
 
 socket.on('server message', (server) => {
+	console.log(server);
+	
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const username = document.createElement('span');
@@ -62,7 +64,7 @@ socket.on('server message', (server) => {
 
 	username.append(server.username)
 	li.append(span, username, ' joined');
-	// messageList.append(li);
+	messageList.append(li);
 });
 
 socket.on('server user left', (server) => {
@@ -74,7 +76,7 @@ socket.on('server user left', (server) => {
 
 	username.append(server.username)
 	li.append(span, username, ' left');
-	// messageList.append(li);
+	messageList.append(li);
 });
 
 socket.on('server user message', (server) => {
@@ -158,19 +160,13 @@ socket.on('user message', (user) => {
 
 	const li = document.createElement('li');
 	const span = document.createElement('span');
-	// const flags = user.flags;
 	// alert(user)
 	const message = user.msg;
 	const username = user.username;
-	const song = user.song;
 
 	// alert(message)
 	if(username == 'You') {
 		li.classList.add('me');	
-	}
-
-	if(song) {
-		li.classList.add(song);		
 	}
 
 	span.append(`${username}`)
@@ -194,7 +190,6 @@ socket.on('user request', (song) => {
 	if(username == 'You') {
 		li.classList.add('me');	
 	}
-console.log('fu', song);
 
 	if(songName) {
 		link.classList.add(songId);		
@@ -212,7 +207,7 @@ if(form) {
 		
 		event.preventDefault();
 
-		const roomId = `/chats#${location.pathname.split('/')[2]}`
+		const roomId = `${location.pathname.split('/')[2]}`
 		
 		socket.emit('chat', { roomId, message: message.value })
 		formUser.style.display = 'none';
@@ -222,7 +217,7 @@ if(form) {
 }
 
 socket.on('song lists', (lists) => {
-	alert(lists.songs);
+
 	if(songLists.childNodes.length > 0){
 		while(songLists.firstChild) {
 			songLists.removeChild(songLists.firstChild);
@@ -258,15 +253,17 @@ socket.on('song requests added', (requests) => {
 
 	const songId = requests.song.id;
 	console.log(songId);
-	li.append(span, `${songName}`, link);
+	li.append(span, `${songName} `, link);
 
 	messageList.append(li);
 })
 
 songLists.addEventListener('click', function(event){
-	const songId = event.target.classList.value;
+	const songId = event.target.tagName === 'LI' ?  event.target.classList.value :  event.target.parentElement.classList.value;
 	const songName = event.target.textContent;
-	const searchResults = event.target.parentElement
+	const searchResults = event.target.tagName === 'LI' ? event.target.parentElement : event.target.parentElement.parentElement
+
+	console.log(event.target.tagName);
 
 	if(searchResults.childNodes.length > 0){
 		while(searchResults.firstChild) {
