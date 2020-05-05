@@ -72,7 +72,15 @@ Spotify API has quite vage rate limits, atleast I couldn't find it in the docume
 For more information you can refer to the [Spotify API documentation](https://developer.spotify.com/documentation/web-api/).
 
 ## Data life cycle
-![data-life-cycle-2](https://user-images.githubusercontent.com/8554238/79840078-b3f94b00-83b5-11ea-8bb7-f9bf324b2f63.png)
+
+### Join or host a radio
+![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81110541-f70dff00-8f1b-11ea-803a-7ca15a0fcbe6.png)
+
+### Add song to queue
+![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81110460-db0a5d80-8f1b-11ea-8e90-3e3471eaa82a.png)
+
+### Request a song
+![data-life-cycle-song-request](https://user-images.githubusercontent.com/8554238/81110501-e78eb600-8f1b-11ea-8797-ae1164032845.png)
 
 ## Message types
 ### Client to server
@@ -91,7 +99,6 @@ For more information you can refer to the [Spotify API documentation](https://de
 - `music player` - Send host current playing song to clients
 - `user request` - Send a chat message to other people in the chat
 - `song lists` - Send search results to client
-
 
 ## ToDo
 Things/features I would like to add. For more info see [project spotify](https://github.com/nlvo/real-time-web-1920/projects/1)
