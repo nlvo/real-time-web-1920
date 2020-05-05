@@ -75,11 +75,37 @@ input {
 button {
     border: 0;
     border-radius: .625em;
-    background-color: var(--steel-500);
+    background-color: var(--vanilla-500);
     color: var(--steel-900);
 }
 
 /* --------------------------------------------------------
+    Landingpage | home
+ * -------------------------------------------------------- */
+
+ .landing {
+    align-self: center;
+    background-color: var(--steel-800);
+    border-radius: .25em;
+    padding: 3em 2em;
+    margin: 0 auto;
+    width: 25%;
+}
+
+.landing h1 {
+    margin-top: 0;
+}
+
+.landing a {
+    background-color: var(--vanilla-500);
+    color: var(--vanilla-900);
+    padding: .625em 1em;
+    border-radius: .25em;
+    margin-top: .625em;
+    display: inline-flex;
+}
+
+ /* --------------------------------------------------------
     Chat | container
  * -------------------------------------------------------- */
 
@@ -88,6 +114,9 @@ main {
     display: flex;
     height: 100vh;
     margin: 0;
+    background: url('/img/pattern.png');
+    background-repeat: repeat-x;
+    background-size: contain;
 }
 
 main .container {
