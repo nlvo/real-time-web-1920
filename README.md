@@ -81,7 +81,7 @@ For more information you can refer to the [Spotify API documentation](https://de
 ![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81110541-f70dff00-8f1b-11ea-803a-7ca15a0fcbe6.png)
 
 ### Add song to queue
-![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81110460-db0a5d80-8f1b-11ea-8e90-3e3471eaa82a.png)
+![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81147126-f2783380-8f79-11ea-9205-caf8e4c9ba37.png)
 
 ### Request a song
 ![data-life-cycle-song-request](https://user-images.githubusercontent.com/8554238/81110501-e78eb600-8f1b-11ea-8797-ae1164032845.png)
@@ -101,7 +101,7 @@ For more information you can refer to the [Spotify API documentation](https://de
 - `user message` - Send a chat message to other people in the chat
 
 - `music player` - Send host current playing song to clients
-- `user request` - Send a chat message to other people in the chat
+- `user request` - Send a song request to other people in the chat
 - `song lists` - Send search results to client
 
 ## ToDo
