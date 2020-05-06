@@ -78,7 +78,7 @@ For more information you can refer to the [Spotify API documentation](https://de
 ## Data life cycle
 
 ### Join or host a radio
-![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81110541-f70dff00-8f1b-11ea-803a-7ca15a0fcbe6.png)
+![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81147684-17b97180-8f7b-11ea-88aa-bc8dc08c9e2c.png)
 
 ### Add song to queue
 ![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81147126-f2783380-8f79-11ea-9205-caf8e4c9ba37.png)
