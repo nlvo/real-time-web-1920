@@ -78,10 +78,10 @@ For more information you can refer to the [Spotify API documentation](https://de
 ## Data life cycle
 
 ### Join or host a radio
-![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81147684-17b97180-8f7b-11ea-88aa-bc8dc08c9e2c.png)
+![data-life-cycle-host-join](https://user-images.githubusercontent.com/8554238/81148169-1177c500-8f7c-11ea-907a-43a37a92177d.png)
 
 ### Add song to queue
-![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81147126-f2783380-8f79-11ea-9205-caf8e4c9ba37.png)
+![data-life-cycle-add-que](https://user-images.githubusercontent.com/8554238/81148173-13da1f00-8f7c-11ea-934e-42d47d1f0e02.png)
 
 ### Request a song
 ![data-life-cycle-song-request](https://user-images.githubusercontent.com/8554238/81110501-e78eb600-8f1b-11ea-8797-ae1164032845.png)
