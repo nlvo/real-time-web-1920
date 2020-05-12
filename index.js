@@ -38,30 +38,30 @@ app
 
 		// console.log(res.io);
 		
-		let song = await api.currentPlaying(req,res);
+		// let song = await api.currentPlaying(req,res);
 		// console.log(song.item);	
 		
-		setInterval( async function () {
-			try {
-				const newSong = await api.currentPlaying(req,res);
+		// setInterval( async function () {
+		// 	try {
+		// 		const newSong = await api.currentPlaying(req,res);
 				
-				if (song && song.item.id !== newSong.item.id) {
-					song = newSong
+		// 		if (song && song.item.id !== newSong.item.id) {
+		// 			song = newSong
 
-					io.emit('music player', {
-						song
-					});
-				} else {
-					// console.log(roomId);
+		// 			io.emit('music player', {
+		// 				song
+		// 			});
+		// 		} else {
+		// 			// console.log(roomId);
 
-					io.emit('music player', {
-						song
-					});
-				}
-			} catch(error){
-				console.log(error, 'no song');
-			}
-		}, 1000)
+		// 			io.emit('music player', {
+		// 				song
+		// 			});
+		// 		}
+		// 	} catch(error){
+		// 		console.log(error, 'no song');
+		// 	}
+		// }, 1000)
 
 		res.render('chat', { roomId })
 	})
@@ -150,12 +150,12 @@ app
 				song: songInfo
 			})
 			
-			socket.local.emit('radio queue', {
-				songs: radioQueue
+			socket.local.emit('add to queue', {
+				songs: songInfo
 			})
 
-			socket.to(song.roomId).emit('radio queue', {
-				songs: radioQueue
+			socket.to(song.roomId).emit('add to queue', {
+				songs: songInfo
 			})
 		})
 

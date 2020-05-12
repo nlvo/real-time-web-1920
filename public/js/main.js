@@ -246,17 +246,17 @@ socket.on('search results', (lists) => {
 	})
 })
 
-socket.on('song requests added', (requests) => {
-	console.log('rrrr',requests);
-	const li = document.createElement('li');
-	const span = document.createElement('span');
+// socket.on('song requests added', (requests) => {
+// 	console.log('rrrr',requests);
+// 	const li = document.createElement('li');
+// 	const span = document.createElement('span');
 
-	const songId = requests.song.id;
-	console.log(songId);
-	li.append(span, `${songName} `, link);
+// 	const songId = requests.song.id;
+// 	console.log(songId);
+// 	li.append(span, `${requests.song.name} `);
 
-	messageList.append(li);
-})
+// 	messageList.append(li);
+// })
 
 songLists.addEventListener('click', function(event){
 	const songId = event.target.tagName === 'LI' ?  event.target.classList.value :  event.target.parentElement.classList.value;
@@ -302,5 +302,28 @@ socket.on('radio queue', (queue) => {
 		li.append(tbn, `${songName} - `, span)
 		playlist.append(li);	
 	});
+
+})
+
+socket.on('add to queue', (queue) => {
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const tbn = document.createElement('img');
+	console.log('queueee', queue);
+	
+	queue.songs.album.images.forEach(a => {
+		
+		if (a.height == 64) {
+			tbn.src = a.url;
+		}
+	})
+
+	const songName = queue.songs.name;
+	queue.songs.artists.forEach(artist => {
+		span.append(artist.name)
+	})
+
+	li.append(tbn, `${songName} - `, span)
+	playlist.append(li);	
 
 })
