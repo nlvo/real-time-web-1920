@@ -69,11 +69,13 @@ app
 		res.redirect('/chats/' + req.query.code)
 	});
 
+	const radioQueue = [];
+
 	io.on('connection', (socket) => {
 		const rooms = socket.adapter.rooms;
 		let username = 'anonymous';
 		const bot = 'Luna 🌙';
-		
+
 		socket.emit('rooms', rooms)
 
 		socket.local.emit('server local message', {
@@ -85,6 +87,10 @@ app
 			bot,
 			username
 		});
+
+		socket.local.emit('radio queue', {
+			songs: radioQueue
+		})
 
 		socket.on('set user', (name) => {
 			username = name;
@@ -99,14 +105,13 @@ app
 		})
 
 		socket.on('room', (roomId) => {
-			console.log('roomie?',roomId);
+			console.log('roomie?',radioQueue);
 
 			socket.join(roomId);
 			socket.to(roomId).emit('join room', {
 				bot,
 				username
 			})
-			
 		})
 		socket.on('search songs', async (input) => {
 			console.log('song?',input);
@@ -119,7 +124,7 @@ app
 			console.log('wooah?', songs);
 			
 			// socket.join(roomId);
-			socket.local.emit('song lists', {
+			socket.local.emit('search results', {
 				songs
 			})
 		})
@@ -131,16 +136,26 @@ app
 			const access_token = socketCookie.access_token;
 			console.log('cookie', access_token);
 
-			const songRequest = await api.addToQueu(socketCookie, song.songId);
+			const songRequest = await api.addToQueu(song.songId);
 			console.log(songRequest, ' added');
 			
 			const songInfo = await api.getOneSong(socketCookie, song.songId);
+			radioQueue.push(songInfo)
+			
 			socket.local.emit('song requests added', {
 				song: songInfo
 			})
 			
-			socket.emit('radio playlist', {
+			socket.to(song.roomId).emit('song requests added', {
 				song: songInfo
+			})
+			
+			socket.local.emit('radio queue', {
+				songs: radioQueue
+			})
+
+			socket.to(song.roomId).emit('radio queue', {
+				songs: radioQueue
 			})
 		})
 

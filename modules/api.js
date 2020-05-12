@@ -57,30 +57,9 @@ async function getSongs(cookie, input) {
     }
 }
 
-async function addToQueu(cookie, song) {
-    // console.log(req.cookies.access_token);
-    console.log('cookiesSong', song);
+async function addToQueu(song) {
+    console.log('eaaa', song);
     
-    let access_token = cookie.access_token;
-    const headers = {
-        method: 'post',
-        headers: {
-            'Authorization': `Bearer ${access_token}`
-        }
-    };
-
-    try {
-        const response = await fetch(`https://api.spotify.com/v1/playlists/3g2cgcgceQzWAjwNPUqBbp/tracks?uris=spotify%3Atrack%3A${song}`, headers)
-        const data = await response.json().catch(()=>{
-            console.log('not added');
-        });
-        const songs = await data;
-        console.log('songiia',songs);
-        return songs;
-    } catch (error) {
-        console.log('error ', error);
-        let access_token = req.cookies.refresh_token;
-    }
 }
 
 async function getOneSong(cookie, songId) {

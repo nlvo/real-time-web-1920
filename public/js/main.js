@@ -216,7 +216,7 @@ if(form) {
 	});
 }
 
-socket.on('song lists', (lists) => {
+socket.on('search results', (lists) => {
 
 	if(songLists.childNodes.length > 0){
 		while(songLists.firstChild) {
@@ -241,7 +241,7 @@ socket.on('song lists', (lists) => {
 			}
 		})
 
-		li.append(tbn, songs.name, ' - ' ,span)
+		li.append(tbn, songs.name, ' - hh' ,span)
 		songLists.append(li);
 	})
 })
@@ -276,29 +276,31 @@ songLists.addEventListener('click', function(event){
 
 messageList.addEventListener('click', function(event){
 	const songId = event.target.classList.value;
-
 	socket.emit('add to radio', { roomId, songId })
-	console.log('aiijia', songId);
-	
 })
 
-socket.on('radio playlist', (songs) => {
-	console.log('song nammiy', songs.song.name);
+socket.on('radio queue', (queue) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const tbn = document.createElement('img');
-
-		songs.song.album.images.forEach(a => {
+	console.log('queueee', queue);
+	
+	queue.songs.forEach(song => {
+		console.log(song);
+		song.album.images.forEach(a => {
 			
 			if (a.height == 64) {
 				tbn.src = a.url;
 			}
 		})
-	const songName = songs.song.name;
-	songs.song.artists.forEach(artist => {
-		span.append(artist.name)
-	})
 
-	li.append(tbn, `${songName} - `, span)
-	playlist.append(li);
+		const songName = song.name;
+		song.artists.forEach(artist => {
+			span.append(artist.name)
+		})
+
+		li.append(tbn, `${songName} - `, span)
+		playlist.append(li);	
+	});
+
 })
