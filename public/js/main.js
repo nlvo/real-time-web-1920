@@ -96,30 +96,30 @@ socket.on('server user message', (server) => {
 	// messageList.append(li);
 });
 
-socket.on('music player', (playing) => {
+// socket.on('music player', (playing) => {
 
-	// const currentSong = playing.song;
-	// console.log(playing.song);
-	// console.log(playing);
-	// console.log(Object.keys(playing).length);
-	if(Object.keys(playing).length !== 0 && playing.song !== 'not playing') {
-		const tbn = document.querySelector('.player__tbn');
-		const playingIcon = document.querySelector('.player__is-playing');
-		const link = document.querySelector('h3 a');
-		const songLink = playing.song.context ? playing.song.context.external_urls.spotify : playing.song.item.external_urls.spotify;
-		const songTitle = playing.song.item.name;
-		const songArtist = playing.song.item.artists ? `- ${playing.song.item.artists[0].name}` : '';
-		const isPlaying = playing.song.is_playing ? 'playing' : 'not-playing'
-		playing.song.item.album.images.forEach(a => {
-			if (a.height == 64) {
-				tbn.src = a.url;
-			}
-		})
-		link.textContent = `${songTitle} ${songArtist}`;
-		link.href = songLink;
-		playingIcon.src = `/img/${isPlaying}.svg`;
-	}
-})
+// 	// const currentSong = playing.song;
+// 	// console.log(playing.song);
+// 	// console.log(playing);
+// 	// console.log(Object.keys(playing).length);
+// 	if(Object.keys(playing).length !== 0 && playing.song !== 'not playing') {
+// 		const tbn = document.querySelector('.player__tbn');
+// 		const playingIcon = document.querySelector('.player__is-playing');
+// 		const link = document.querySelector('h3 a');
+// 		const songLink = playing.song.context ? playing.song.context.external_urls.spotify : playing.song.item.external_urls.spotify;
+// 		const songTitle = playing.song.item.name;
+// 		const songArtist = playing.song.item.artists ? `- ${playing.song.item.artists[0].name}` : '';
+// 		const isPlaying = playing.song.is_playing ? 'playing' : 'not-playing'
+// 		playing.song.item.album.images.forEach(a => {
+// 			if (a.height == 64) {
+// 				tbn.src = a.url;
+// 			}
+// 		})
+// 		link.textContent = `${songTitle} ${songArtist}`;
+// 		link.href = songLink;
+// 		playingIcon.src = `/img/${isPlaying}.svg`;
+// 	}
+// })
 
 const roomId = `${location.pathname.split('/')[2]}`;
 socket.emit('room', roomId)
@@ -177,7 +177,6 @@ socket.on('user message', (user) => {
 });
 
 socket.on('user request', (song) => {
-	console.log(song);
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const link = document.createElement('a');
@@ -241,7 +240,7 @@ socket.on('search results', (lists) => {
 			}
 		})
 
-		li.append(tbn, songs.name, ' - hh' ,span)
+		li.append(tbn, songs.name, ' - ' ,span)
 		songLists.append(li);
 	})
 })
@@ -283,26 +282,27 @@ socket.on('radio queue', (queue) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
 	const tbn = document.createElement('img');
-	console.log('queueee', queue);
+	console.log('queueee', Object.keys(queue.songs).length);
 	
-	queue.songs.forEach(song => {
-		console.log(song);
-		song.album.images.forEach(a => {
-			
-			if (a.height == 64) {
-				tbn.src = a.url;
-			}
-		})
+	if(Object.keys(queue.songs).length > 0) {
+		queue.songs.forEach(song => {
+			console.log(song);
+			song.album.images.forEach(a => {
+				
+				if (a.height == 64) {
+					tbn.src = a.url;
+				}
+			})
 
-		const songName = song.name;
-		song.artists.forEach(artist => {
-			span.append(artist.name)
-		})
+			const songName = song.name;
+			song.artists.forEach(artist => {
+				span.append(artist.name)
+			})
 
-		li.append(tbn, `${songName} - `, span)
-		playlist.append(li);	
-	});
-
+			li.append(tbn, `${songName} - `, span)
+			playlist.append(li);	
+		});
+	}
 })
 
 socket.on('add to queue', (queue) => {
@@ -327,3 +327,73 @@ socket.on('add to queue', (queue) => {
 	playlist.append(li);	
 
 })
+
+const play = document.querySelector('.play')
+const audio = document.querySelector('audio')
+const source = document.querySelector('source')
+const h3 = document.querySelector('.player h3')
+
+play.addEventListener('click', function(){
+	if(audio.paused){
+		socket.emit('start radio', {roomId, isPlaying: true})
+	} else {
+		socket.emit('start radio', {roomId, isPlaying: false})
+	}
+})
+
+socket.on('play music', (queue) => {
+	console.log(queue);
+	const tbn = document.querySelector('.player__tbn');
+	const playingIcon = document.querySelector('.player__is-playing');
+	const link = document.querySelector('h3 a');
+
+	// if there is a queue and if radio has started
+	if(queue.song){
+		console.log(queue.song.name);
+		
+		const songTitle = queue.song.name;
+		const songArtist = queue.song.artists ? `- ${queue.song.artists[0].name}` : '';
+
+		// get album cover
+		queue.song.album.images.forEach(a => {
+			if (a.height == 64) {
+				tbn.src = a.url;
+			}
+		})
+
+		link.textContent = `${songTitle} ${songArtist}`;
+
+		// if song has a preview
+		if(queue.song.preview_url){
+			source.src = queue.song.preview_url;
+		} else {
+			socket.emit('song finished', roomId)
+		}
+		console.log('uahuh' ,queue.isPlaying);
+		audio.load();
+
+		if(queue.isPlaying){
+			audio.play();
+			playingIcon.src = `/img/playing.svg`;
+		} else {
+			audio.pause();
+			playingIcon.src = `/img/not-playing.svg`;
+		}
+	}
+})
+
+audio.addEventListener('ended', songEnded)
+
+function songEnded () {
+	const tbn = document.querySelector('.player__tbn')
+	console.log('oh noh NEXT');
+	socket.emit('song finished', roomId)
+	console.log(playlist.childNodes.length);
+	playlist.removeChild(playlist.childNodes[0])
+	if(playlist.childNodes.length == 0) {
+		tbn.src = ''
+		h3.textContent = 'No song'
+		audio.src = ''
+		audio.load();
+	}
+}
