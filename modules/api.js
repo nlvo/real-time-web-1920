@@ -44,13 +44,13 @@ async function getSongs(cookie, input) {
     };
 
     try {
-        const response = await fetch(`https://api.spotify.com/v1/search?q=${input}&type=track&limit=4`, headers)
+        const response = await fetch(`https://api.spotify.com/v1/search?q=${input}&type=track&limit=6`, headers)
         const data = await response.json().catch(()=>{
             console.log('not playing');
         });
         const songs = await data.tracks.items;
-        console.log(data);
-        return songs ;
+        const cleanSongs = songs.filter(a => a.preview_url !== null)
+        return cleanSongs;
     } catch (error) {
         console.log('error ', error);
         let access_token = req.cookies.refresh_token;

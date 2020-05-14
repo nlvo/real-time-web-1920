@@ -266,6 +266,7 @@ socket.on('radio queue', (queue) => {
 	const span = document.createElement('span');
 	const tbn = document.createElement('img');
 	console.log('queueee', Object.keys(queue.songs).length);
+	console.log('wth', queue);
 	
 	if(Object.keys(queue.songs).length > 0) {
 		queue.songs.forEach(song => {
@@ -282,9 +283,9 @@ socket.on('radio queue', (queue) => {
 				span.append(artist.name)
 			})
 
-			li.append(tbn, `${songName} - `, span)
-			playlist.append(li);	
+			li.append(tbn, `${songName} - `, span)	
 		});
+		playlist.append(li);
 	}
 })
 
