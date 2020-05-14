@@ -21,27 +21,7 @@ const playlist = document.querySelector('.playlist ul');
 // 	}
 // })
 
-if(formUser) {
-	formUser.addEventListener('submit', function (event) {
-		event.preventDefault();
-		socket.emit('set user', username.value)
-		this.style.opacity = '0';
-	});
-}
-
-if(formSearch) {
-	formSearch.addEventListener('submit', function (event) {
-		event.preventDefault();		
-		socket.emit('search songs', {value: searchInput.value, roomId})
-	});
-}
-
-function getFlags (character) {
-	for(let i = 0; i < character.length; i++){
-		return character[i];
-	}
-}
-
+// server messages
 socket.on('server local message', (server) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
@@ -79,6 +59,16 @@ socket.on('server user left', (server) => {
 	messageList.append(li);
 });
 
+// username form
+if(formUser) {
+	formUser.addEventListener('submit', function (event) {
+		event.preventDefault();
+		socket.emit('set user', username.value)
+		this.style.opacity = '0';
+	});
+}
+
+// username change message
 socket.on('server user message', (server) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
@@ -93,7 +83,7 @@ socket.on('server user message', (server) => {
 
 	username.append(server.username)
 	span.append(server.bot)
-	// messageList.append(li);
+	messageList.append(li);
 });
 
 // socket.on('music player', (playing) => {
@@ -121,9 +111,12 @@ socket.on('server user message', (server) => {
 // 	}
 // })
 
+
+// room
 const roomId = `${location.pathname.split('/')[2]}`;
 socket.emit('room', roomId)
 
+// joined message
 socket.on('join room', (server) => {
 	console.log('Connected to room', server);
 	const li = document.createElement('li');
@@ -136,35 +129,27 @@ socket.on('join room', (server) => {
 	messageList.append(li);
 });
 
-socket.on('rooms', (rooms) =>{
-	const chatRooms = Object.entries(rooms);
-	// https://zellwk.com/blog/looping-through-js-objects/
-	chatRooms.forEach(chat => {
-		const li = document.createElement('li');
-		const link = document.createElement('a');
-		const chatName = chat[0].length > 4 ? chat[0].split('#')[1] : chat[0];
-		const chatLength = chat[1].length;
+// chat form
+if(form) {
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
+		const roomId = `${location.pathname.split('/')[2]}`
 		
-		link.href = `/chats/${chatName}`
-		link.append(`${chatName} (${chatLength})`)
-		li.append(link)
-		if(chatsList){
-			chatsList.append(li);
-		}
-	})
-	console.log(chatRooms);
-})
+		socket.emit('chat', { roomId, message: message.value })
+		formUser.style.display = 'none';
+		// commandList.classList.remove('active');
+		message.value = '';
+	});
+}
 
+// user chat messages
 socket.on('user message', (user) => {
-	console.log(user);
-
 	const li = document.createElement('li');
 	const span = document.createElement('span');
-	// alert(user)
+
 	const message = user.msg;
 	const username = user.username;
 
-	// alert(message)
 	if(username == 'You') {
 		li.classList.add('me');	
 	}
@@ -176,45 +161,15 @@ socket.on('user message', (user) => {
 
 });
 
-socket.on('user request', (song) => {
-	const li = document.createElement('li');
-	const span = document.createElement('span');
-	const link = document.createElement('a');
-
-	const username = song.username;
-	const songName = song.name;
-	const songId = song.id;
-
-	// alert(message)
-	if(username == 'You') {
-		li.classList.add('me');	
-	}
-
-	if(songName) {
-		link.classList.add(songId);		
-		link.textContent = 'add to playlist';
-	}
-
-	span.append(`${username}`)
-	li.append(span, `${songName}`, link);
-
-	messageList.append(li);
-})
-
-if(form) {
-	form.addEventListener('submit', function (event) {
-		
-		event.preventDefault();
-
-		const roomId = `${location.pathname.split('/')[2]}`
-		
-		socket.emit('chat', { roomId, message: message.value })
-		formUser.style.display = 'none';
-		// commandList.classList.remove('active');
-		message.value = '';
+// song search form
+if(formSearch) {
+	formSearch.addEventListener('submit', function (event) {
+		event.preventDefault();		
+		socket.emit('search songs', {value: searchInput.value, roomId})
 	});
 }
 
+// search results list
 socket.on('search results', (lists) => {
 
 	if(songLists.childNodes.length > 0){
@@ -245,18 +200,7 @@ socket.on('search results', (lists) => {
 	})
 })
 
-// socket.on('song requests added', (requests) => {
-// 	console.log('rrrr',requests);
-// 	const li = document.createElement('li');
-// 	const span = document.createElement('span');
-
-// 	const songId = requests.song.id;
-// 	console.log(songId);
-// 	li.append(span, `${requests.song.name} `);
-
-// 	messageList.append(li);
-// })
-
+// user clicks to request a song
 songLists.addEventListener('click', function(event){
 	const songId = event.target.tagName === 'LI' ?  event.target.classList.value :  event.target.parentElement.classList.value;
 	const songName = event.target.textContent;
@@ -273,11 +217,50 @@ songLists.addEventListener('click', function(event){
 	socket.emit('song request', { roomId, message: songName, song: songId })
 })
 
+// radio song request from user
+socket.on('user song request', (song) => {
+	const li = document.createElement('li');
+	const span = document.createElement('span');
+	const link = document.createElement('a');
+
+	const username = song.username;
+	const songName = song.name;
+	const songId = song.id;
+
+	if(username == 'You') {
+		li.classList.add('me');	
+	}
+
+	if(songName) {
+		link.classList.add(songId);		
+		link.textContent = 'add to playlist';
+	}
+
+	span.append(`${username} 🙏`)
+	li.append(span, `${songName}`, link);
+
+	messageList.append(li);
+})
+
+// socket.on('song requests added', (requests) => {
+// 	console.log('rrrr',requests);
+// 	const li = document.createElement('li');
+// 	const span = document.createElement('span');
+
+// 	const songId = requests.song.id;
+// 	console.log(songId);
+// 	li.append(span, `${requests.song.name} `);
+
+// 	messageList.append(li);
+// })
+
+// host add song to queue
 messageList.addEventListener('click', function(event){
 	const songId = event.target.classList.value;
 	socket.emit('add to radio', { roomId, songId })
 })
 
+// full radio queue list
 socket.on('radio queue', (queue) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
@@ -305,6 +288,7 @@ socket.on('radio queue', (queue) => {
 	}
 })
 
+// radio queue | append one item
 socket.on('add to queue', (queue) => {
 	const li = document.createElement('li');
 	const span = document.createElement('span');
@@ -333,6 +317,7 @@ const audio = document.querySelector('audio')
 const source = document.querySelector('source')
 const h3 = document.querySelector('.player h3')
 
+// music play toggle
 play.addEventListener('click', function(){
 	if(audio.paused){
 		socket.emit('start radio', {roomId, isPlaying: true})
@@ -341,13 +326,13 @@ play.addEventListener('click', function(){
 	}
 })
 
-socket.on('play music', (queue) => {
-	console.log(queue);
+// music player | plays first song from the queue on the server
+socket.on('play song', (queue) => {
 	const tbn = document.querySelector('.player__tbn');
 	const playingIcon = document.querySelector('.player__is-playing');
 	const link = document.querySelector('h3 a');
 
-	// if there is a queue and if radio has started
+	// if there is a queue
 	if(queue.song){
 		console.log(queue.song.name);
 		
@@ -369,7 +354,7 @@ socket.on('play music', (queue) => {
 		} else {
 			socket.emit('song finished', roomId)
 		}
-		console.log('uahuh' ,queue.isPlaying);
+
 		audio.load();
 
 		if(queue.isPlaying){
@@ -384,6 +369,7 @@ socket.on('play music', (queue) => {
 
 audio.addEventListener('ended', songEnded)
 
+// if audio ended, emit song finished
 function songEnded () {
 	const tbn = document.querySelector('.player__tbn')
 	console.log('oh noh NEXT');
@@ -392,8 +378,28 @@ function songEnded () {
 	playlist.removeChild(playlist.childNodes[0])
 	if(playlist.childNodes.length == 0) {
 		tbn.src = ''
-		h3.textContent = 'No song'
+		h3.textContent = ''
 		audio.src = ''
 		audio.load();
 	}
 }
+
+// /chats/ rooms list
+socket.on('rooms', (rooms) =>{
+	const chatRooms = Object.entries(rooms);
+	// https://zellwk.com/blog/looping-through-js-objects/
+	chatRooms.forEach(chat => {
+		const li = document.createElement('li');
+		const link = document.createElement('a');
+		const chatName = chat[0].length > 4 ? chat[0].split('#')[1] : chat[0];
+		const chatLength = chat[1].length;
+		
+		link.href = `/chats/${chatName}`
+		link.append(`${chatName} (${chatLength})`)
+		li.append(link)
+		if(chatsList){
+			chatsList.append(li);
+		}
+	})
+	console.log(chatRooms);
+})

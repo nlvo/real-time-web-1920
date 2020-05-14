@@ -88,10 +88,6 @@ app
 			username
 		});
 
-		socket.local.emit('radio queue', {
-			songs: radioQueue
-		})
-
 		socket.on('set user', (name) => {
 			username = name;
 			socket.local.emit('server user message', {
@@ -105,14 +101,13 @@ app
 		})
 
 		socket.on('room', (roomId) => {
-			// console.log('roomie?',radioQueue);
-
 			socket.join(roomId);
 			socket.to(roomId).emit('join room', {
 				bot,
 				username
 			})
 		})
+
 		socket.on('search songs', async (input) => {
 			// console.log('song?',input);
 			socket.cookie = socket.handshake.headers.cookie || socket.request.headers.cookie
@@ -129,15 +124,15 @@ app
 			})
 		})
 
+		// emit radio queue to new person
+		socket.local.emit('radio queue', {
+			songs: radioQueue
+		})
+
 		socket.on('add to radio', async (song) => {
-			// console.log('songIddddd', song.songId);
 			socket.cookie = socket.handshake.headers.cookie || socket.request.headers.cookie
 			const socketCookie = cookie.parse(socket.cookie);
 			const access_token = socketCookie.access_token;
-			// console.log('cookie', access_token);
-
-			const songRequest = await api.addToQueu(song.songId);
-			// console.log(songRequest, ' added');
 			
 			const songInfo = await api.getOneSong(socketCookie, song.songId);
 			radioQueue.push(songInfo)
@@ -161,22 +156,17 @@ app
 		})
 
 		socket.on('start radio', (radio) => {
-			
-			// radioQueue.forEach(songs => {
-			// 	console.log('a',songs);
-			// })
-			// console.log('whuh',Object.values(radioQueue)[0]);
-			
 
-			socket.emit('play music', {
+			socket.emit('play song', {
 				song: Object.values(radioQueue)[0],
 				isPlaying: radio.isPlaying
 			})
 			
-			socket.to(radio.roomId).emit('play music', {
+			socket.to(radio.roomId).emit('play song', {
 				song: Object.values(radioQueue)[0],
 				isPlaying: radio.isPlaying
 			})
+			
 		})
 		
 		socket.on('song finished', (room) => {
@@ -184,28 +174,27 @@ app
 
 			radioQueue = radioQueue.filter(song => Object.values(radioQueue)[0] !== song)
 			console.log('iieeeck', radioQueue);
-			// console.log('whaaa', a);
 
-			socket.emit('play music', {
-				song: Object.values(radioQueue)[0]
+			socket.emit('play song', {
+				song: Object.values(radioQueue)[0],
+				isPlaying: true
 			})
 			
-			socket.to(room).emit('play music', {
-				song: Object.values(radioQueue)[0]
+			socket.to(room).emit('play song', {
+				song: Object.values(radioQueue)[0],
+				isPlaying: true
 			})
 		});
 
-		socket.on('song request', (song) => {
-			// console.log(song);
-			
+		socket.on('song request', (song) => {			
 			// song request emits
-			socket.local.emit('user request', {
+			socket.local.emit('user song request', {
 				name: song.message,
 				id: song.song,
 				username
 			})
 			
-			socket.to(song.roomId).emit('user request', {
+			socket.to(song.roomId).emit('user song request', {
 				name: song.message,
 				id: song.song,
 				username
@@ -213,8 +202,6 @@ app
 		})
 
 		socket.on('chat', (msg) => {
-			// console.log('id?',msg);
-
 			// user chat messages
 			socket.emit('user message', {
 				msg: msg.message,
