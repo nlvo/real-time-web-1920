@@ -34,38 +34,36 @@ The spotify API uses OAUTH. In order for you to use the Spotify API you'll need 
 - Client Secret
 - Redirect uri
 
-The Spotify API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the player, track and search endpoint.
+The Spotify API’s base endpoint is `https://api.spotify.com/`. The API has a few endpoints to choose from. We will be using the track and search endpoint.
 
 - `/v1/search`
-- `/v1/me/player/currently-playing`
 - `/v1/tracks/{id}`
 
 ### Player
 This is an example endpoint to get a list of the user's current playing song
 
-`/v1/me/player/currently-playing`
+`/v1/tracks/{id}`
 
 #### Data example
 ```
 {
-  "timestamp": 1587307658716,
-  "context": {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/playlist/playlist_id"
-    },
-    "href": "https://api.spotify.com/v1/playlists/playlist_id",
-    "type": "playlist",
-    "uri": "spotify:user:user_id:playlist:playlist_id"
-  },
-  "progress_ms": 71614,
-  "item": {}
-  "currently_playing_type": "track",
-  "actions": {
-    "disallows": {
-      "resuming": true
-    }
-  },
-  "is_playing": true
+  "album": {...},
+  "artists": [{...}],
+  "available_markets": [...],
+  "disc_number": 1,
+  "duration_ms": 295502,
+  "explicit": false,
+  "external_ids": {},
+  "external_urls": {},
+  "href": "https://api.spotify.com/v1/tracks/id",
+  "id": "4aebBr4JAihzJQR0CiIZJv",
+  "is_local": false,
+  "name": "Hello",
+  "popularity": 73,
+  "preview_url": "https://p.scdn.co/mp3-preview/song_id",
+  "track_number": 1,
+  "type": "track",
+  "uri": "spotify:track:id"
 }
 ```
 More about the [api](https://developer.spotify.com/documentation/web-api/) in the Spotify API documentation.
@@ -90,19 +88,25 @@ For more information you can refer to the [Spotify API documentation](https://de
 ### Client to server
 - `set user` - Set your username
 - `chat message` - Send a _chat message_ to other people in the chat
+
 - `song request` - Send a _song request_ to other people in the chat
-- `search songs` - Send a search request
-- `add to radio` - Send _song_ that is added to the radio to other people in the chat
+- `search songs` - Send a search request to find songs
+
+- `add to radio` - Send _song_ that is added to the queue
+- `play song` - Send first song from queue to other people in the chat
+- `song finished` - Send a message if song finished to server
 
 ### Server to client
 - `server message` - Send a server notification to clients
 - `join room` - Send a server notification to clients that someone joined
 
 - `user message` - Send a chat message to other people in the chat
+- `user song request` - Send the _song request_ to other people in the chat
 
-- `music player` - Send host current playing song to clients
-- `user request` - Send a song request to other people in the chat
-- `song lists` - Send search results to client
+- `add to queue` - Send added song to queue to other people in the chat
+- `radio queue` - Send queue to others/new clients
+
+- `search results` - Send search results to client
 
 ## ToDo
 Things/features I would like to add. For more info see [project spotify](https://github.com/nlvo/real-time-web-1920/projects/1)
@@ -114,11 +118,11 @@ Things/features I would like to add. For more info see [project spotify](https:/
       - [ ] host
       - [ ] users
 - [ ] api
-    - [x]  current song playing
-    - [x]  add song to playlist
+    - [x]  current song playing (removed)
+    - [x]  add song to queue
     - [x]  request a song
     - [x]  search for songs
-    - [ ]  play songs
+    - [x]  play songs (preview)
 
 ## Known bug/not completely working features
 - When adding song to playlist, it will be added to an already chosen one.
