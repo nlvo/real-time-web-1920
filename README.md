@@ -134,7 +134,6 @@ Kris for the login example in slack group
 
 ## Sources
 - [Tailwind colors](https://tailwindcss.com/)
-- [App to translate a word to multiple languages](https://translatr.constunmalhotra.xyz/)
 - [Socket IO](https://socket.io/get-started/chat/)
 
 ### License
